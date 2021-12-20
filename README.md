@@ -52,7 +52,7 @@ Add toggle switch to change colors from dark to light and vice-versa.
 Acceptance:
 When user clicks on toggle switch, it should change theme.
 
-### Order food
+m### Order food
 
 As a user, I want to restore my energy by ordering a meal or snack.
 
