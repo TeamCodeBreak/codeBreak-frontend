@@ -93,3 +93,7 @@ User should be able to click on Rubby Duck then it would take over the web page.
 ## Software Requirements
 
 link to [software requirements](requirements.md) doc
+
+## Resources Used
+
+- _[Brett Jordan - Unsplash - Rubber Duck](https://images.unsplash.com/photo-1559715541-5daf8a0296d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cnViYmVyJTIwZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)_
