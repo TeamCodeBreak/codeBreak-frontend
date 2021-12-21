@@ -37,7 +37,7 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let response = await axios.post(`${REACT_APP_URL}/signin`, {}, {
+      let response = await axios.post(`${DATABASE_URL}/signin`, {}, {
         auth: {
           username,
           password,
@@ -91,7 +91,7 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let res = await axios.post(`${REACT_APP_URL}/signup`, { username, password, role: 'admin' });
+      let res = await axios.post(`${DATABASE_URL}/signup`, { username, password, role: 'admin' });
       const token = jwt.sign(res.data.user, SECRET);
       validateToken(token);
     } catch (err) {
