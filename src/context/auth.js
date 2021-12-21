@@ -42,7 +42,7 @@ function AuthProvider({ children }) {
           username,
           password,
          }
-      );
+        });
       const token = jwt.sign(response.data.user, SECRET);
       validateToken(token);
     } catch (e) {
