@@ -9,7 +9,6 @@ const SECRET = process.env.REACT_APP_SECRET || 'secretstring';
 const DATABASE_URL = process.env.REACT_APP_URL;
 
 function AuthProvider({ children }) {
-
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState(null);
@@ -22,7 +21,7 @@ function AuthProvider({ children }) {
     token,
     logout,
     setLogInState,
-    register
+    register,
   };
 
   function isAuthorized(capability) {
@@ -36,12 +35,16 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let response = await axios.post(`${DATABASE_URL}/signin`, {}, {
-        auth: {
-          username,
-          password
+      let response = await axios.post(
+        `${DATABASE_URL}/signin`,
+        {},
+        {
+          auth: {
+            username,
+            password,
+          },
         }
-      });
+      );
       const token = jwt.sign(response.data.user, SECRET);
       validateToken(token);
     } catch (e) {
@@ -82,7 +85,7 @@ function AuthProvider({ children }) {
     } catch (e) {
       console.log('useEffect Context Auth error', e);
     }
-  },[]);
+  }, []);
 
   async function register(username, password) {
     if (username === '' || password === '') {
@@ -90,7 +93,11 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let res = await axios.post(`${DATABASE_URL}/signup`, { username, password, role: 'admin' });
+      let res = await axios.post(`${DATABASE_URL}/signup`, {
+        username,
+        password,
+        role: 'admin',
+      });
       const token = jwt.sign(res.data.user, SECRET);
       validateToken(token);
     } catch (err) {
@@ -99,11 +106,7 @@ function AuthProvider({ children }) {
     }
   }
 
-  return (
-    <AuthContext.Provider value={state}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
 }
 
 export default AuthProvider;
