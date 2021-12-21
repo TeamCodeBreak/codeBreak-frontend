@@ -9,7 +9,6 @@ const SECRET = process.env.REACT_APP_SECRET || 'secretstring';
 const REACT_APP_URL = process.env.REACT_APP_URL;
 
 function AuthProvider({ children }) {
-
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState(null);
@@ -22,7 +21,7 @@ function AuthProvider({ children }) {
     token,
     logout,
     setLogInState,
-    register
+    register,
   };
 
   function isAuthorized(capability) {
@@ -39,9 +38,9 @@ function AuthProvider({ children }) {
       let response = await axios.post(`${REACT_APP_URL}/signin`, {}, {
         auth: {
           username,
-          password
-        }
-      });
+          password,
+         }
+      );
       const token = jwt.sign(response.data.user, SECRET);
       validateToken(token);
     } catch (e) {
@@ -99,11 +98,7 @@ function AuthProvider({ children }) {
     }
   }
 
-  return (
-    <AuthContext.Provider value={state}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
 }
 
 export default AuthProvider;
