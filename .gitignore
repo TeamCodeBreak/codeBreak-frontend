@@ -226,6 +226,10 @@ $RECYCLE.BIN/
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 
+# misc
+
+.prettierrc
+
 
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
 © 2021 GitHub, Inc.
