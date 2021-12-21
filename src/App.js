@@ -1,21 +1,18 @@
 import './App.scss';
+import Header from './components/header/Header.js';
+import Footer from './components/footer/Footer.js';
+import SignUp from './components/sign-up/Sign-Up.js';
+import Login from './components/login/Login.js';
+import './App.scss';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <p>hello world</p>
+      <Login/>
+      <SignUp/>
+      <Footer/>
     </div>
   );
 }
