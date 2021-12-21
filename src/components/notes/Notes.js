@@ -31,8 +31,12 @@ export default function Notes() {
     };
     console.log(auth.token);
     let response = await axios.get(`${url}/notes`, config);
-
-    console.log(response);
+    let data = response.data;
+    // console.log(data)
+    let sortData = data.sort((a, b)=>{
+      return a.id-b.id;
+    })
+    console.log('sort',sortData);
     setNotes(response.data);
   }
 
