@@ -48,7 +48,7 @@ function SignUp2() {
     <>
       <When condition={!auth.isLoggedIn}>
         <FormControl>
-          <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
             <div>
               <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                 {/* <TextField id="input-with-sx" label="With sx" variant="standard" /> */}
@@ -92,7 +92,11 @@ function SignUp2() {
               </FormControl>
             </div>
           </Box>
-          <Button variant="outlined" onClick={handleSubmit}>Register</Button>
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginRight: '15px' }}>
+            <div >
+              <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>Signup</Button>
+            </div>
+          </Box>
         </FormControl>
       </When>
     </>

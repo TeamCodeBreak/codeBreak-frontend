@@ -10,7 +10,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
-import { When } from "react-if";
+import { Alert } from '@mui/material';
+import { When, Unless } from "react-if";
 
 import { AuthContext } from '../../context/auth.js';
 
@@ -45,14 +46,14 @@ function Login2() {
   }
 
   function handleClearForm(event) {
-    event.target.reset();
+    event.reset();
   }
 
   return (
     <>
       <FormControl onSubmit={handleClearForm}>
         <When condition={auth.isLoggedIn}>
-          <Button variant="outlined" onClick={auth.logout}>
+          <Button variant="outlined" onClick={auth.logout} onChange={handleClearForm}>
             Logout
           </Button>
         </When>
@@ -62,7 +63,7 @@ function Login2() {
           <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
             <div>
               <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                <FormControl id="usernameLogin" sx={{ m: 1, width: '25ch' }} variant="outlined">
                   <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-username"
@@ -102,7 +103,19 @@ function Login2() {
               </FormControl>
             </div>
           </Box>
-          <Button variant="outlined" onClick={handleSubmit}>Login</Button>
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginRight: '15px' }}>
+            <div>
+              <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>
+                Login
+              </Button>
+              <When condition={values.password}>
+                <Alert severity={'success'} />
+                <Unless condition={!values.password}>
+                  <Alert severity="error">ERROR!</Alert>
+                </Unless>
+              </When>
+            </div>
+          </Box>
         </FormControl>
       </When>
     </>
