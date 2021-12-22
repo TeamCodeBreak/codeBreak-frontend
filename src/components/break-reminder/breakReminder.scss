@@ -2,4 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 300px;
+  // background-color: red;
+  // text-align: center;
+
+  #formControl {
+    // background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #timerDiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      font-family:fantasy; // TODO: custom Google font
+      // background-color: lime;
+    }
+
+  }
 }

@@ -1,16 +1,18 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import StaticTimePicker from '@mui/lab/StaticTimePicker';
-import Container from '@mui/material/Container';
+// import TextField from '@mui/material/TextField';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+// import StaticTimePicker from '@mui/lab/StaticTimePicker';
+// import Container from '@mui/material/Container';
 import './breakReminder.scss';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import { Box } from '@mui/system';
+import { FormControl, InputLabel, OutlinedInput } from '@mui/material';
+import BreakReminderModal from '../break-modal/Modal';
 
 export default function BreakReminder() {
-  const [value, setValue] = React.useState(new Date());
 
   const [second, setSecond] = useState('00');
   const [minute, setMinute] = useState('00');
@@ -34,6 +36,7 @@ export default function BreakReminder() {
         setCounter(counter => {
           if (counter <= 0) {
             // TODO: have model pop up
+            handleOpen();
             // TODO: showModal default false
             // TODO: setShowModal to true
             console.log('timer stopped');
@@ -54,6 +57,11 @@ export default function BreakReminder() {
     setMinute('00')
   }
 
+  // MODAL: state
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   function handleChange(e) {
     let userBreakInterval = e.target.value * 60;
     setCounter(userBreakInterval);
@@ -65,36 +73,28 @@ export default function BreakReminder() {
 
   return (
     <div id="breakReminder">
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <StaticTimePicker
-          displayStaticWrapperAs="mobile"
-          value={counter}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={() => <TextField {...counter} />}
-        />
-      </LocalizationProvider>
-
-      <div className="time">
-        <h2>Set Your Break Time</h2>
-        <form onSubmit={handleSubmit}>
-          <input
+      <Box className="time">
+        <FormControl id='formControl' onSubmit={handleSubmit}>
+          <InputLabel>Next Break in...</InputLabel>
+          <OutlinedInput
             type='number'
             min='0'
-            placeholder="set Break time in min"
+            placeholder="Minutes"
             name="breaktime"
-            onChange={handleChange}
-          />
-        </form>
-        <span className="minute">{minute}</span>
-        <span>:</span>
-        <span className="second">{second}</span>
-        <Stack spacing={2} direction="row">
-          <Button variant="contained" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
-          <Button variant="contained" onClick={stopTimer}>reset</Button>
-        </Stack>
-      </div>
+            onChange={handleChange}>
+          </OutlinedInput>
+          <div id="timerDiv">
+            <span className="minute">{minute}</span>
+            <span>:</span>
+            <span className="second">{second}</span>
+          </div>
+          <Stack spacing={2} direction="row">
+            <Button variant="contained" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
+            <Button variant="contained" onClick={stopTimer}>Reset</Button>
+          </Stack>
+        </FormControl>
+        <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
+      </Box>
     </div>
   );
 }
