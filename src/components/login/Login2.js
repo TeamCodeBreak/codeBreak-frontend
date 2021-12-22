@@ -48,13 +48,6 @@ function Login2() {
 
   return (
     <>
-      <FormControl onSubmit={handleSubmit}>
-        <When condition={auth.isLoggedIn}>
-          <Button variant="outlined" onClick={auth.logout} onChange={handleChange}>
-            Logout
-          </Button>
-        </When>
-      </FormControl>
       <When condition={!auth.isLoggedIn}>
         <FormControl>
           <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
