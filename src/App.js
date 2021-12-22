@@ -8,6 +8,7 @@ import Login2 from './components/login/Login2';
 import RubberDucky from './components/rubber-ducky/RubberDucky';
 import BreakReminder from './components/break-reminder/BreakReminder.js';
 import Notes from './components/notes/Notes.js';
+import Food from './components/food/Food.js'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import "bootstrap/scss/bootstrap";
@@ -19,9 +20,11 @@ function App() {
       <p>hello world</p>
       <SignUp2 />
       <Login2 />
-      <Notes />
+      <div style={{display:'flex', flexDirection:'row',justifyContent:'space-evenly', marginTop:'3rem'}}><Notes />
       <BreakReminder />
+      <Food />
       <RubberDucky />
+      </div>
       <Footer />
     </div>
   );

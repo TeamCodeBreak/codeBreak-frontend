@@ -1,4 +1,7 @@
-#footerNav{
+#footerNav {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;

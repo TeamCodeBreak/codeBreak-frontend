@@ -62,7 +62,7 @@ export default function BreakReminder() {
   }
 
   return (
-    <Container id="breakReminder">
+    <div id="breakReminder">
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <StaticTimePicker
           displayStaticWrapperAs="mobile"
@@ -94,6 +94,6 @@ export default function BreakReminder() {
           </button>
          <button onClick={stopTimer}>reset</button>
        </div>
-    </Container>
+    </div>
   );
 }
