@@ -14,7 +14,7 @@ import { When } from "react-if";
 
 import { AuthContext } from '../../context/auth.js';
 
-function SignUp2() {
+function SignUp() {
 
   let auth = useContext(AuthContext);
 
@@ -104,4 +104,4 @@ function SignUp2() {
   );
 }
 
-export default SignUp2;
+export default SignUp;
