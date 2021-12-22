@@ -2,8 +2,8 @@ import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
-import SignUp2 from './components/sign-up/SignUp2.js';
-import Login2 from './components/login/Login2';
+import SignUp from './components/sign-up/SignUp.js';
+import Login from './components/login/Login';
 import Home from './components/home/Home'
 import { AuthContext } from './context/auth';
 import AboutUs from './components/about-us/AboutUs'
@@ -31,8 +31,8 @@ function App() {
           element={auth.isLoggedIn 
             ? <Home id="home" /> 
             : <> 
-                <Login2 />
-                <SignUp2/>
+                <Login />
+                <SignUp/>
               </>
           }/>
           <Route path='/aboutus' element={<AboutUs />}/>

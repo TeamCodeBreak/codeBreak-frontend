@@ -10,12 +10,11 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
-import { Alert } from '@mui/material';
-import { When, Unless } from "react-if";
+import { When } from "react-if";
 
 import { AuthContext } from '../../context/auth.js';
 
-function Login2() {
+function SignUp() {
 
   let auth = useContext(AuthContext);
 
@@ -40,27 +39,21 @@ function Login2() {
     event.preventDefault();
   };
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    await auth.login(values.username, values.password);
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await auth.register(values.username, values.password);
     setValues('');
   }
 
   return (
     <>
-      <FormControl onSubmit={handleSubmit}>
-        <When condition={auth.isLoggedIn}>
-          <Button variant="outlined" onClick={auth.logout} onChange={handleChange}>
-            Logout
-          </Button>
-        </When>
-      </FormControl>
       <When condition={!auth.isLoggedIn}>
-        <FormControl>
-          <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
+        <FormControl onChange={handleChange}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
             <div>
               <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                <FormControl id="usernameLogin" sx={{ m: 1, width: '25ch' }} variant="outlined">
+                {/* <TextField id="input-with-sx" label="With sx" variant="standard" /> */}
+                <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                   <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-username"
@@ -101,16 +94,8 @@ function Login2() {
             </div>
           </Box>
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginRight: '15px' }}>
-            <div>
-              <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>
-                Login
-              </Button>
-              <When condition={values.password}>
-                <Alert severity={'success'} />
-                <Unless condition={!values.password}>
-                  <Alert severity="error">ERROR!</Alert>
-                </Unless>
-              </When>
+            <div >
+              <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>Signup</Button>
             </div>
           </Box>
         </FormControl>
@@ -119,4 +104,4 @@ function Login2() {
   );
 }
 
-export default Login2;
+export default SignUp;
