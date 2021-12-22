@@ -1,37 +1,45 @@
 import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
-// import SignUp from './components/sign-up/Sign-Up.js';
 import SignUp2 from './components/sign-up/SignUp2.js';
-// import Login from './components/login/Login.js';
 import Login2 from './components/login/Login2';
-import RubberDucky from './components/rubber-ducky/RubberDucky';
-import BreakReminder from './components/break-reminder/BreakReminder.js';
-import Notes from './components/notes/Notes.js';
-import Food from './components/food/Food.js'
+import Home from './components/home/Home'
+import { AuthContext } from './context/auth';
+import AboutUs from './components/about-us/AboutUs'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { useContext } from 'react';
 import { ThemeContext } from './context/theme';
 // import "bootstrap/scss/bootstrap";
 
 
-function App() {
-const theme = useContext(ThemeContext);
 
-// const themeClass = theme.mode;
+function App() {
+
+
+  let auth = useContext(AuthContext);
+  const theme = useContext(ThemeContext);
+
   return (
-    <div className={theme.mode}>
-      <Header />
-      <p>hello world</p>
-      <SignUp2 />
-      <Login2 />
-      <div style={{display:'flex', flexDirection:'row',justifyContent:'space-evenly', marginTop:'3rem'}}><Notes />
-      <BreakReminder />
-      <Food />
-      <RubberDucky />
-      </div>
-      <Footer />
+   <div className={theme.mode}>
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path='/'
+          element={auth.isLoggedIn 
+            ? <Home id="home" /> 
+            : <> 
+                <Login2 />
+                <SignUp2/>
+              </>
+          }/>
+          <Route path='/aboutus' element={<AboutUs />}/>
+        </Routes>
+        <Footer />
+      </Router>
+
     </div>
   );
 }
