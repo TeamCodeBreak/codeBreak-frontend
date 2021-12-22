@@ -6,6 +6,8 @@ import StaticTimePicker from '@mui/lab/StaticTimePicker';
 import Container from '@mui/material/Container';
 import './breakReminder.scss';
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 export default function BreakReminder() {
   const [value, setValue] = React.useState(new Date());
@@ -23,12 +25,12 @@ export default function BreakReminder() {
         const secondCounter = counter % 60;
         const minuteCounter = Math.floor(counter / 60);
 
-        const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}`: secondCounter;
-        const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
+        const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}` : secondCounter;
+        const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}` : minuteCounter;
 
         setSecond(computedSecond);
         setMinute(computedMinute);
-        
+
         setCounter(counter => {
           if (counter <= 0) {
             // TODO: have model pop up
@@ -44,7 +46,7 @@ export default function BreakReminder() {
     // cleanup function to clear the interval when the effect stops running.
     return () => clearInterval(intervalId);
   }, [isActive, counter])
-  
+
   function stopTimer() {
     setIsActive(false);
     setCounter(0);
@@ -52,12 +54,12 @@ export default function BreakReminder() {
     setMinute('00')
   }
 
-  function handleChange (e) {
+  function handleChange(e) {
     let userBreakInterval = e.target.value * 60;
     setCounter(userBreakInterval);
   }
 
-  function handleSubmit (e) {
+  function handleSubmit(e) {
     e.preventDefault();
   }
 
@@ -66,16 +68,17 @@ export default function BreakReminder() {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <StaticTimePicker
           displayStaticWrapperAs="mobile"
-          value={value}
+          value={counter}
           onChange={(newValue) => {
             setValue(newValue);
           }}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={() => <TextField {...counter} />}
         />
       </LocalizationProvider>
 
       <div className="time">
-      <form onSubmit={handleSubmit}>
+        <h2>Set Your Break Time</h2>
+        <form onSubmit={handleSubmit}>
           <input
             type='number'
             min='0'
@@ -87,13 +90,11 @@ export default function BreakReminder() {
         <span className="minute">{minute}</span>
         <span>:</span>
         <span className="second">{second}</span>
+        <Stack spacing={2} direction="row">
+          <Button variant="contained" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
+          <Button variant="contained" onClick={stopTimer}>reset</Button>
+        </Stack>
       </div>
-      <div>
-         <button onClick={() => setIsActive(!isActive)}>
-           {isActive ? "Pause": "Start"}
-          </button>
-         <button onClick={stopTimer}>reset</button>
-       </div>
     </div>
   );
 }
