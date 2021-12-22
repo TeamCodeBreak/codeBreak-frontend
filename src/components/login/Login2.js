@@ -43,17 +43,14 @@ function Login2() {
   async function handleSubmit(event) {
     event.preventDefault();
     await auth.login(values.username, values.password);
-  }
-
-  function handleClearForm(event) {
-    event.reset();
+    setValues('');
   }
 
   return (
     <>
-      <FormControl onSubmit={handleClearForm}>
+      <FormControl onSubmit={handleSubmit}>
         <When condition={auth.isLoggedIn}>
-          <Button variant="outlined" onClick={auth.logout} onChange={handleClearForm}>
+          <Button variant="outlined" onClick={auth.logout} onChange={handleChange}>
             Logout
           </Button>
         </When>

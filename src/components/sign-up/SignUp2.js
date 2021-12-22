@@ -42,12 +42,13 @@ function SignUp2() {
   async function handleSubmit(e) {
     e.preventDefault();
     await auth.register(values.username, values.password);
+    setValues('');
   }
 
   return (
     <>
       <When condition={!auth.isLoggedIn}>
-        <FormControl>
+        <FormControl onChange={handleChange}>
           <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
             <div>
               <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
