@@ -9,14 +9,21 @@ import { AuthContext } from './context/auth';
 import AboutUs from './components/about-us/AboutUs'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useContext } from 'react';
+
+import { useContext } from 'react';
+import { ThemeContext } from './context/theme';
+// import "bootstrap/scss/bootstrap";
+
+
 
 function App() {
 
+
   let auth = useContext(AuthContext);
+  const theme = useContext(ThemeContext);
 
   return (
-    <div className="App">
+   <div className={theme.mode}>
       <Router>
         <Header />
         <Routes>
@@ -32,6 +39,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+
     </div>
   );
 }
