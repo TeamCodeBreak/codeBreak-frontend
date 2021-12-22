@@ -11,11 +11,17 @@ import Notes from './components/notes/Notes.js';
 import Food from './components/food/Food.js'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useContext } from 'react';
+import { ThemeContext } from './context/theme';
 // import "bootstrap/scss/bootstrap";
 
+
 function App() {
+const theme = useContext(ThemeContext);
+
+// const themeClass = theme.mode;
   return (
-    <div className="App">
+    <div className={theme.mode}>
       <Header />
       <p>hello world</p>
       <SignUp2 />
