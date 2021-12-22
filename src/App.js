@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer.js';
 import SignUp from './components/sign-up/Sign-Up.js';
 import Login from './components/login/Login.js';
 import RubberDucky from './components/rubber-ducky/RubberDucky';
+import BreakReminder from './components/break-reminder/BreakReminder.js';
 import Notes from './components/notes/Notes.js';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,6 +18,7 @@ function App() {
       <Login />
       <SignUp />
       <Notes />
+      <BreakReminder />
       <RubberDucky />
       <Footer />
     </div>
