@@ -1,0 +1,63 @@
+
+input{
+  outline: none;
+  resize: none;
+}
+
+
+.notes__parent{
+display:flex;
+flex-direction: column;
+}
+
+.note {
+  font-family: "Permanent Marker", cursive;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: lightyellow;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 3px lightgrey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.note__text {
+  font-family: "Permanent Marker", cursive;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+.note__delete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 20px;
+  color: red;
+  padding: 5px;
+  border:none;
+  background-color: lightyellow;
+}
+
+.note__delete:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.note_editbox{
+  position: absolute;
+ border:none;
+ width:100%;
+ bottom: 0px;
+ background-color: lightyellow;
+ border-radius: 5px;
+}
