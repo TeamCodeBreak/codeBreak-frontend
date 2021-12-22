@@ -1,31 +1,37 @@
 import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
-// import SignUp from './components/sign-up/Sign-Up.js';
 import SignUp2 from './components/sign-up/SignUp2.js';
-// import Login from './components/login/Login.js';
 import Login2 from './components/login/Login2';
-import RubberDucky from './components/rubber-ducky/RubberDucky';
-import BreakReminder from './components/break-reminder/BreakReminder.js';
-import Notes from './components/notes/Notes.js';
-import Food from './components/food/Food.js'
+import Home from './components/home/Home'
+import { AuthContext } from './context/auth';
+import AboutUs from './components/about-us/AboutUs'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import "bootstrap/scss/bootstrap";
+import React, { useContext } from 'react';
 
 function App() {
+
+  let auth = useContext(AuthContext);
+
   return (
     <div className="App">
-      <Header />
-      <p>hello world</p>
-      <SignUp2 />
-      <Login2 />
-      <div style={{display:'flex', flexDirection:'row',justifyContent:'space-evenly', marginTop:'3rem'}}><Notes />
-      <BreakReminder />
-      <Food />
-      <RubberDucky />
-      </div>
-      <Footer />
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path='/'
+          element={auth.isLoggedIn 
+            ? <Home id="home" /> 
+            : <> 
+                <Login2 />
+                <SignUp2/>
+              </>
+          }/>
+          <Route path='/aboutus' element={<AboutUs />}/>
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
