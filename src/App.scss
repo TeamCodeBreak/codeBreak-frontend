@@ -1,19 +1,20 @@
 .App {
   text-align: center;
 }
-
+#root {
+  height: 100%;
+}
 
 .dark {
   text-align: center;
   background: rgb(101, 64, 64);
   color: rgb(243, 192, 251);
+  height: 100%;
 }
 
 .light {
   text-align: center;
-  
+  height: 100%;
   background: rgb(173, 204, 215);
   color: rgb(42, 24, 24);
 }
-
-
