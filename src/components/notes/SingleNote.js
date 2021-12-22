@@ -1,41 +1,41 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SingleNote(props) {
-  const [collapse, setCollapse] = useState(false);
+  const [value, setValue] = useState('');
 
-  function handleCollapse() {
-    setCollapse(!collapse);
-  }
+function handleValue(e){
+  if (e.key === 'Enter') {
+    props.handleUpdateNote(e);
+    setValue('');
+  } 
+}
+  
   return (
-    <div key={props.note.id}>
-      <p>
+    <li className ='note'key={props.note.id}>
+      <div className="note__text">
         {props.note.notes}
         <button
-          style={{ marginLeft: '2rem', color: 'red', border: 'none' }}
+         className="note__delete"
           onClick={props.handleDelete}
           id={props.note.id}
         >
           x
         </button>
-        <button
-          className="buttonGrades"
-          style={{ border: 'none' }}
-          onClick={handleCollapse}
-        >
-          {collapse ? '-' : '+'}
-        </button>
-        {collapse && (
+     
+      </div>
+      
+       
           <input
             placeholder="update"
-            style={{ border: 'none' }}
+            className="note_editbox"
             type="text"
-            value={props.value}
+            value={value}
             id={props.note.id}
-            onKeyPress={props.handleUpdateNote}
-            onChange={e => props.setValue(e.target.value)}
+            onKeyPress={handleValue}
+            onChange={e => setValue(e.target.value)}
           ></input>
-        )}
-      </p>
-    </div>
+       
+          
+    </li>
   );
 }

@@ -53,23 +53,21 @@ export default function Notes() {
         notes: value,
       };
       console.log(auth.token);
-      let response = await axios.post(`${url}/notes`, obj, config);
+      await axios.post(`${url}/notes`, obj, config);
       setRun(!run);
       setValue('');
     }
   }
   async function handleUpdateNote(e) {
-    console.log('trigger');
-    if (e.key === 'Enter') {
+      console.log('trigger',e.target.value);
       e.preventDefault();
       let config = {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       };
-      console.log('updateValue---', updateValue);
       let obj = {
-        notes: updateValue,
+        notes: e.target.value,
       };
       console.log(auth.token);
       let response = await axios.put(
@@ -80,7 +78,7 @@ export default function Notes() {
       console.log('update-------', response);
       setRun(!run);
       setUpdateValue('');
-    }
+    
   }
 
   async function handleDelete(e) {
@@ -100,24 +98,26 @@ export default function Notes() {
   console.log('note------', notes);
   return (
     <>
+         <div className="notes__parent">
+           
+           <input
+            style={{ border: 'none',margin:'10px', fontFamily:'Permanent Marker,cursive'}}
+            type="text"
+            value={value}
+            placeholder="Enter your thoughts!"
+            onKeyPress={handleAddNote}
+            onChange={e => setValue(e.target.value)}
+          ></input>
       {notes[0] &&
         notes.map(note => (
           <SingleNote
             note={note}
             handleDelete={handleDelete}
             handleUpdateNote={handleUpdateNote}
-            setValue={setUpdateValue}
-            value={updateValue}
+            updateValue={updateValue}
           />
         ))}
-      <input
-        style={{ border: 'none' }}
-        type="text"
-        value={value}
-        placeholder="Enter your thoughts!"
-        onKeyPress={handleAddNote}
-        onChange={e => setValue(e.target.value)}
-      ></input>
+    </div>
     </>
   );
 }
