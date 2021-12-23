@@ -14,7 +14,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './assets/codebrLogoLight.png';
 import React, { useContext } from 'react';
 import { ThemeContext } from './context/theme';
-// import "bootstrap/scss/bootstrap";
 
 function App() {
   let auth = useContext(AuthContext);

@@ -5,10 +5,8 @@ import jwt from 'jsonwebtoken';
 
 export const AuthContext = React.createContext();
 
-
 const SECRET = process.env.REACT_APP_SECRET || 'secretlol';
 const DATABASE_URL = process.env.REACT_APP_URL;
-
 
 function AuthProvider({ children }) {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -27,7 +25,6 @@ function AuthProvider({ children }) {
   };
 
   function isAuthorized(capability) {
-    // check user capabilities and return a boolean
     return user?.capabilities?.includes(capability);
   }
 
@@ -37,12 +34,15 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let response = await axios.post(`${DATABASE_URL}/signin`, {}, {
-        auth: {
-          username,
-          password,
+      let response = await axios.post(
+        `${DATABASE_URL}/signin`,
+        {},
+        {
+          auth: {
+            username,
+            password,
+          },
         }
-      }
       );
       const token = jwt.sign(response.data.user, SECRET);
       validateToken(token);
@@ -92,7 +92,11 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let res = await axios.post(`${DATABASE_URL}/signup`, { username, password, role: 'admin' });
+      let res = await axios.post(`${DATABASE_URL}/signup`, {
+        username,
+        password,
+        role: 'admin',
+      });
       const token = jwt.sign(res.data.user, SECRET);
       validateToken(token);
     } catch (e) {
