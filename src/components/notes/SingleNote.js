@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function SingleNote(props) {
   const [value, setValue] = useState('');
@@ -11,7 +11,7 @@ export default function SingleNote(props) {
   }
 
   return (
-    <li className='note' key={props.note.id}>
+    <li className="note" key={props.note.id}>
       <div className="note__text">
         {props.note.notes}
         <button
