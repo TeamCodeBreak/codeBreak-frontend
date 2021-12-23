@@ -33,10 +33,10 @@ export default function Notes() {
     let response = await axios.get(`${url}/notes`, config);
     let data = response.data;
     // console.log(data)
-    let sortData = data.sort((a, b)=>{
-      return a.id-b.id;
-    })
-    console.log('sort',sortData);
+    let sortData = data.sort((a, b) => {
+      return a.id - b.id;
+    });
+    console.log('sort', sortData);
     setNotes(response.data);
   }
 
@@ -59,26 +59,21 @@ export default function Notes() {
     }
   }
   async function handleUpdateNote(e) {
-      console.log('trigger',e.target.value);
-      e.preventDefault();
-      let config = {
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-        },
-      };
-      let obj = {
-        notes: e.target.value,
-      };
-      console.log(auth.token);
-      let response = await axios.put(
-        `${url}/notes/${e.target.id}`,
-        obj,
-        config
-      );
-      console.log('update-------', response);
-      setRun(!run);
-      setUpdateValue('');
-    
+    console.log('trigger', e.target.value);
+    e.preventDefault();
+    let config = {
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+      },
+    };
+    let obj = {
+      notes: e.target.value,
+    };
+    console.log(auth.token);
+    let response = await axios.put(`${url}/notes/${e.target.id}`, obj, config);
+    console.log('update-------', response);
+    setRun(!run);
+    setUpdateValue('');
   }
 
   async function handleDelete(e) {
@@ -98,26 +93,25 @@ export default function Notes() {
   console.log('note------', notes);
   return (
     <>
-         <div className="notes__parent">
-           
-           <input
-            style={{ border: 'none',margin:'10px', fontFamily:'Permanent Marker,cursive'}}
-            type="text"
-            value={value}
-            placeholder="Enter your thoughts!"
-            onKeyPress={handleAddNote}
-            onChange={e => setValue(e.target.value)}
-          ></input>
-      {notes[0] &&
-        notes.map(note => (
-          <SingleNote
-            note={note}
-            handleDelete={handleDelete}
-            handleUpdateNote={handleUpdateNote}
-            updateValue={updateValue}
-          />
-        ))}
-    </div>
+      <div className="notes__parent">
+        <input
+          className="input__notes"
+          type="text"
+          value={value}
+          placeholder="Enter your thoughts!"
+          onKeyPress={handleAddNote}
+          onChange={e => setValue(e.target.value)}
+        ></input>
+        {notes[0] &&
+          notes.map(note => (
+            <SingleNote
+              note={note}
+              handleDelete={handleDelete}
+              handleUpdateNote={handleUpdateNote}
+              updateValue={updateValue}
+            />
+          ))}
+      </div>
     </>
   );
 }
