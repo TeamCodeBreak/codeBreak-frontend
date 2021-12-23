@@ -8,6 +8,7 @@ import Logout from '../logout/Logout';
 import { When } from 'react-if';
 import { AuthContext } from '../../context/auth.js';
 import lightLogo from '../../assets/codebrLogoLight.png'
+import darkLogo from '../../assets/codebrLogoDark.png'
 
 function Header(props) {
   let theme = useContext(ThemeContext);
@@ -34,7 +35,7 @@ function Header(props) {
     <Box sx={{ flexGrow: 1 }} data-testid="header">
       <div style={themeStyle} className="header1" position="static" id="navBar">
         {theme.mode === 'light' ? 
-                  <img src={lightLogo} alt="logo" id="title"/>
+                  <img src={darkLogo} alt="logo" id="title"/>
                   : <img src={lightLogo} alt="logo" id="title"/>}
         <div id="login-switch-container">
           <Typography
