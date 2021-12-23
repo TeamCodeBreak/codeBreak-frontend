@@ -11,7 +11,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
 import { When } from "react-if";
-
+import './sign-up.scss';
+import Container from '@mui/material/Container';
 import { AuthContext } from '../../context/auth.js';
 
 function SignUp(props) {
@@ -48,60 +49,64 @@ function SignUp(props) {
   return (
     <>
       <When condition={!auth.isLoggedIn && props.showSignup}>
-        <FormControl onChange={handleChange}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
-            <div>
-              <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <Container id="formContainer">
+          <h2>Signup</h2>
+          <FormControl onChange={handleChange}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
+              <div>
+                <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                  <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                    <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
+                    <OutlinedInput
+                      id="outlinedInputUsername"
+                      required
+                      type={values ? 'text' : 'username'}
+                      defaultValue={''}
+                      value={values.username}
+                      onChange={handleChange('username')}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <AccountCircle sx={{ color: 'action.active', mr: -0.5, my: 0 }} />
+                        </InputAdornment>
+                      }
+                      label="Username"
+                    />
+                  </FormControl>
+                </Box>
+
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                  <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
+                  <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                   <OutlinedInput
-                    id="outlinedInputUsername"
-                    required
-                    type={values ? 'text' : 'username'}
-                    defaultValue={''}
-                    value={values.username}
-                    onChange={handleChange('username')}
+                    id="outlinedInputPassword"
+                    type={values.showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    onChange={handleChange('password')}
                     endAdornment={
                       <InputAdornment position="end">
-                        <AccountCircle sx={{ color: 'action.active', mr: -0.5, my: 0 }} />
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
                       </InputAdornment>
                     }
-                    label="Username"
+                    label="Password"
                   />
                 </FormControl>
-              </Box>
-
-              <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                <OutlinedInput
-                  id="outlinedInputPassword"
-                  type={values.showPassword ? 'text' : 'password'}
-                  value={values.password}
-                  onChange={handleChange('password')}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  label="Password"
-                />
-              </FormControl>
-            </div>
-          </Box>
-
-          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginRight: '15px' }}>
-            <div >
-              <Button sx={{ backgroundColor: 'dodgerblue', width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="contained" onClick={handleSubmit}>Signup</Button>
-            </div>
-          </Box>
-        </FormControl>
+              </div>
+            </Box>
+            <Box id="buttonCont">
+              <Button
+                id="loginButton"
+                variant="contained"
+                onClick={handleSubmit}>
+                Signup</Button>
+            </Box>
+          </FormControl>
+        </Container>
       </When>
     </>
   );

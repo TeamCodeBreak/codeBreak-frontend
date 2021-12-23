@@ -34,37 +34,41 @@ function Header(props) {
   return (
     <Box sx={{ flexGrow: 1 }} data-testid="header">
       <div style={themeStyle} className="header1" position="static" id="navBar">
-        {theme.mode === 'light' ? 
-                  <img src={darkLogo} alt="logo" id="title"/>
-                  : <img src={lightLogo} alt="logo" id="title"/>}
+        {theme.mode === 'light' ?
+          <img src={darkLogo} alt="logo" id="title" />
+          : <img src={lightLogo} alt="logo" id="title" />}
         <div id="login-switch-container">
-          <Typography
-            className="loginHome"
-            variant="h5"
-            component="div"
-            sx={{ flexGrow: 1 }}
-            id="title"
-            onClick={() => props.setEnter(true)}
-          >
-            login
-          </Typography>
-          <Switch
-            className="switch-theme"
-            onClick={() =>
-              theme.setMode(theme.mode === 'light' ? 'dark' : 'light')
-            }
-          ></Switch>
-        </div>
+        <When condition={!auth.isLoggedIn}>
+          
+            <Typography
+              className="loginHome"
+              variant="h5"
+              component="div"
+              sx={{ flexGrow: 1 }}
+              id="title"
+              onClick={() => props.setEnter(true)}
+            >
+              login
+            </Typography>
+
+        </When>
         <When condition={auth.isLoggedIn}>
-          <div id="logoutButtonDiv" style={{ width: '10%', display: 'flex' }}>
             <Logout
               showSignup={props.showSignup}
               setShowSignup={props.setShowSignup}
             />
-          </div>
         </When>
+        <Switch
+          id='switch'
+          color="default"
+          className="switch-theme"
+          onClick={() =>
+            theme.setMode(theme.mode === 'light' ? 'dark' : 'light')
+          }
+        ></Switch>
+        </div>
       </div>
-    </Box>
+    </Box >
   );
 }
 
