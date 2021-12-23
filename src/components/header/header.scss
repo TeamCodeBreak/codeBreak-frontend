@@ -1,22 +1,45 @@
 .header1 {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 5rem;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 38px;
   margin-bottom: 3rem;
-}
-.title {
-  width: 80%;
-  margin: auto;
-  padding: 0.75rem;
-}
-.switch-theme {
-  align-self: center;
-  margin: 2.2rem;
+
+  #title {
+    height:50px;
+    margin-left: 2%;
+  
+  }
+  #login-switch-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+
+    .loginHome{
+      display: flex;
+      transition: all 0.6s ease-in-out;
+      align-items: center;
+    }
+  
+    .loginHome:hover{
+      color: #BBC1C8;
+    }
+  
+    .switch-theme {
+      align-self: center;
+      margin: 2.2rem;
+    }
+  }
+  
+
+  #logoutButtonDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-#logoutButtonDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
+
