@@ -10,19 +10,19 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
-import { Alert } from '@mui/material';
-import { When, Unless } from "react-if";
+import { Link } from '@mui/material';
+import { When } from "react-if";
 
 import { AuthContext } from '../../context/auth.js';
 
-function Login() {
+function Login(props) {
 
   let auth = useContext(AuthContext);
 
   const [values, setValues] = React.useState({
     username: '',
     password: '',
-    showPassword: false,
+    showPassword: false
   });
 
   const handleChange = (value) => (event) => {
@@ -48,7 +48,7 @@ function Login() {
 
   return (
     <>
-      <When condition={!auth.isLoggedIn}>
+      <When condition={!auth.isLoggedIn && !props.showSignup}>
         <FormControl>
           <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
             <div>
@@ -98,12 +98,22 @@ function Login() {
               <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>
                 Login
               </Button>
-              <When condition={values.password}>
+              <Box>
+                <Link
+                  component="button"
+                  variant="body2"
+                  onClick={() => {
+                    props.setShowSignup(true);
+                  }}>
+                  Create An Account
+                </Link>
+              </Box>
+              {/* <When condition={values.password}>
                 <Alert severity={'success'} />
                 <Unless condition={!values.password}>
                   <Alert severity="error">ERROR!</Alert>
                 </Unless>
-              </When>
+              </When> */}
             </div>
           </Box>
         </FormControl>

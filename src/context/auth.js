@@ -41,8 +41,8 @@ function AuthProvider({ children }) {
         auth: {
           username,
           password,
-         }
         }
+      }
       );
       const token = jwt.sign(response.data.user, SECRET);
       validateToken(token);
@@ -57,7 +57,7 @@ function AuthProvider({ children }) {
       setLogInState(true, token, user);
     } catch (e) {
       setLogInState(false, null, {});
-      console.log('Error validating token:', e);
+      throw new Error(e);
     }
   }
 
@@ -95,8 +95,7 @@ function AuthProvider({ children }) {
       let res = await axios.post(`${DATABASE_URL}/signup`, { username, password, role: 'admin' });
       const token = jwt.sign(res.data.user, SECRET);
       validateToken(token);
-    } catch (err) {
-      console.log('error signing in', err);
+    } catch (e) {
       return false;
     }
   }
