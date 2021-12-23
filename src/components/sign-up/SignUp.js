@@ -52,12 +52,13 @@ function SignUp(props) {
           <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
             <div>
               <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                {/* <TextField id="input-with-sx" label="With sx" variant="standard" /> */}
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                   <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
                   <OutlinedInput
-                    id="outlined-adornment-username"
+                    id="outlinedInputUsername"
+                    required
                     type={values ? 'text' : 'username'}
+                    defaultValue={''}
                     value={values.username}
                     onChange={handleChange('username')}
                     endAdornment={
@@ -65,14 +66,15 @@ function SignUp(props) {
                         <AccountCircle sx={{ color: 'action.active', mr: -0.5, my: 0 }} />
                       </InputAdornment>
                     }
-                    label="Password"
+                    label="Username"
                   />
                 </FormControl>
               </Box>
+
               <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
-                  id="outlined-adornment-password"
+                  id="outlinedInputPassword"
                   type={values.showPassword ? 'text' : 'password'}
                   value={values.password}
                   onChange={handleChange('password')}
@@ -93,9 +95,10 @@ function SignUp(props) {
               </FormControl>
             </div>
           </Box>
+
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginRight: '15px' }}>
             <div >
-              <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>Signup</Button>
+              <Button sx={{ backgroundColor: 'dodgerblue', width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="contained" onClick={handleSubmit}>Signup</Button>
             </div>
           </Box>
         </FormControl>

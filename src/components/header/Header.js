@@ -46,7 +46,7 @@ function Header(props) {
         >
           codeBreak
         </Typography>
-        <div style={{ width: '10%', display: 'flex' }}>
+        <div id="logoutButtonDiv" style={{ width: '10%', display: 'flex' }}>
           <Logout
             showSignup={props.showSignup}
             setShowSignup={props.setShowSignup}

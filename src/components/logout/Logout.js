@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { When } from 'react-if';
 
 import { AuthContext } from '../../context/auth.js';
+// import { ThemeContext } from '../../context/theme.js'; ------> would we be able to implement theme preference to component colors?
 
 function Logout(props) {
   let auth = useContext(AuthContext);
@@ -14,21 +15,20 @@ function Logout(props) {
   }
 
   return (
-    <>
+    <div id="logoutButton">
       <When condition={auth.isLoggedIn}>
         <Button
-          style={{
-            width: '100%',
-            border: 'none',
-            color: 'orangeRed',
-          }}
-          variant="outlined"
+          size="small"
+          border="none"
+          variant="contained"
+          color="error"
+          // variant="outlined"
           onClick={handleSubmit}
         >
           Logout
         </Button>
       </When>
-    </>
+    </div>
   );
 }
 
