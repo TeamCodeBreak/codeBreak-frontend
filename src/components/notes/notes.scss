@@ -1,17 +1,15 @@
-
-input{
+input {
   outline: none;
   resize: none;
 }
 
-
-.notes__parent{
-display:flex;
-flex-direction: column;
+.notes__parent {
+  display: flex;
+  flex-direction: column;
 }
 
 .note {
-  font-family: "Permanent Marker", cursive;
+  font-family: 'Permanent Marker', cursive;
   width: 200px;
   height: 200px;
   margin: 10px;
@@ -24,18 +22,14 @@ flex-direction: column;
   position: relative;
 }
 
-
 .note__text {
-  font-family: "Permanent Marker", cursive;
+  font-family: 'Permanent Marker', cursive;
   width: 100%;
   padding: 8px 14px;
   background: transparent;
   font-size: 16px;
   font-weight: bold;
 }
-
-
-
 
 .note__delete {
   position: absolute;
@@ -44,7 +38,7 @@ flex-direction: column;
   font-size: 20px;
   color: red;
   padding: 5px;
-  border:none;
+  border: none;
   background-color: lightyellow;
 }
 
@@ -53,11 +47,18 @@ flex-direction: column;
   cursor: pointer;
 }
 
-.note_editbox{
+.note_editbox {
   position: absolute;
- border:none;
- width:100%;
- bottom: 0px;
- background-color: lightyellow;
- border-radius: 5px;
+  border: none;
+  width: 100%;
+  bottom: 0px;
+  background-color: lightyellow;
+  border-radius: 5px;
+}
+
+.input__notes {
+  border: none;
+  margin: 10px;
+  font-family: Permanent Marker, cursive;
+  background-color: lightYellow;
 }

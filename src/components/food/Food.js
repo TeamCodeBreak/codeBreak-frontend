@@ -18,18 +18,28 @@ export default function Food() {
     e.preventDefault();
     let obj = {
       postalcode: formData,
-    }
-    let response = await axios.post(`${REACT_APP_URL}/food`, obj)
-    // console.log('working')
-    // console.log(response.data.data);
-    setData(response.data.data);
+
+    };
+    let response = await axios.post(`${REACT_APP_URL}/food`, obj);
+   
+
+    let filteredResponse = response.data.data.filter(value => {
+      if (!value.ad_position) {
+        return value;
+      }
+    });
+
+    setData(filteredResponse);
+
   }
-  // console.log(formData);
+
   return (
+
     <div style={{
       display: 'flex',
       justifyContent: 'flex-end'
     }}>
+
       <div>
         <form onSubmit={findRestaurant}>
           <TextField
@@ -44,32 +54,37 @@ export default function Food() {
             style={{
               width: 'auto',
               height: '3.4rem',
-              backgroundColor: 'lightBlue'
+
+              backgroundColor: 'lightBlue',
             }}
             type="submit"
           >
             Find
           </Button>
         </form>
-        {data && data.map((foodPlace, idx) => (
-          <div
-            key={idx}
-            style={{ margin: '3rem', position: 'relative', zIndex: '100' }}
-          >
-            <Card style={{ width: 350, background: 'lightBlue', color: 'white' }}>
-              <CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {foodPlace.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {foodPlace.address}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </div>
-        ))}
+        {data &&
+          data.map((foodPlace, idx) => (
+            <div
+              key={idx}
+              style={{ margin: '3rem', position: 'relative', zIndex: '100' }}
+            >
+              <Card
+                style={{ width: 350, background: 'lightBlue', color: 'white' }}
+              >
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {foodPlace.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {foodPlace.address}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+          ))}
+
       </div>
     </div>
   );

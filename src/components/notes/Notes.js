@@ -31,9 +31,11 @@ export default function Notes() {
     };
     let response = await axios.get(`${url}/notes`, config);
     let data = response.data;
+
     let sortData = data.sort((a, b) => {
       return a.id - b.id;
     })
+
     console.log('sort', sortData);
     setNotes(response.data);
   }
@@ -56,6 +58,7 @@ export default function Notes() {
     }
   }
   async function handleUpdateNote(e) {
+
     e.preventDefault();
     let config = {
       headers: {
@@ -65,6 +68,7 @@ export default function Notes() {
     let obj = {
       notes: e.target.value,
     };
+
     let response = await axios.put(
       `${url}/notes/${e.target.id}`,
       obj,
@@ -72,6 +76,7 @@ export default function Notes() {
     );
     setRun(!run);
     setUpdateValue('');
+
 
   }
 
@@ -90,7 +95,8 @@ export default function Notes() {
       <div className="notes__parent">
 
         <input
-          style={{ border: 'none', margin: '10px', fontFamily: 'Permanent Marker,cursive' }}
+          className="input__notes"
+
           type="text"
           value={value}
           placeholder="Enter your thoughts!"
