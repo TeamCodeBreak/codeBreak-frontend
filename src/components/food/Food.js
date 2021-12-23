@@ -18,28 +18,27 @@ export default function Food() {
     e.preventDefault();
     let obj = {
       postalcode: formData,
-
     };
     let response = await axios.post(`${REACT_APP_URL}/food`, obj);
-   
 
     let filteredResponse = response.data.data.filter(value => {
       if (!value.ad_position) {
-        return value;
+        return true;
+      } else {
+        return false;
       }
     });
 
     setData(filteredResponse);
-
   }
 
   return (
-
-    <div style={{
-      display: 'flex',
-      justifyContent: 'flex-end'
-    }}>
-
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+      }}
+    >
       <div>
         <form onSubmit={findRestaurant}>
           <TextField
@@ -84,7 +83,6 @@ export default function Food() {
               </Card>
             </div>
           ))}
-
       </div>
     </div>
   );
