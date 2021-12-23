@@ -1,9 +1,4 @@
 import * as React from 'react';
-// import TextField from '@mui/material/TextField';
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-// import StaticTimePicker from '@mui/lab/StaticTimePicker';
-// import Container from '@mui/material/Container';
 import './breakReminder.scss';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
@@ -21,7 +16,6 @@ export default function BreakReminder() {
 
   useEffect(() => {
     let intervalId;
-    console.log(isActive);
     if (isActive) {
       intervalId = setInterval(() => {
         const secondCounter = counter % 60;
@@ -35,12 +29,8 @@ export default function BreakReminder() {
 
         setCounter(counter => {
           if (counter <= 0) {
-            // TODO: have model pop up
             handleOpen();
-            // TODO: showModal default false
-            // TODO: setShowModal to true
-            console.log('timer stopped');
-            stopTimer()
+            stopTimer();
           }
           return counter - 1;
         });
@@ -54,7 +44,7 @@ export default function BreakReminder() {
     setIsActive(false);
     setCounter(0);
     setSecond('00');
-    setMinute('00')
+    setMinute('00');
   }
 
   // MODAL: state
