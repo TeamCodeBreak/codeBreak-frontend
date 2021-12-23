@@ -6,12 +6,12 @@ import Button from '@mui/material/Button';
 import SignUp from './components/sign-up/SignUp.js';
 import Login from './components/login/Login';
 import Container from '@mui/material/Container';
-import Home from './components/home/Home'
+import Home from './components/home/Home';
 import { AuthContext } from './context/auth';
 import AboutUs from './components/about-us/AboutUs';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './assets/codebrLogoLight.png'
+import logo from './assets/codebrLogoLight.png';
 import React, { useContext } from 'react';
 import { ThemeContext } from './context/theme';
 // import "bootstrap/scss/bootstrap";
@@ -28,7 +28,9 @@ function App() {
       <Router>
         <Header showSignup={showSignup} setShowSignup={setShowSignup} />
         <Routes>
-          <Route exact path='/'
+          <Route
+            exact
+            path="/"
             element={
               auth.isLoggedIn ? (
                 <Home
@@ -36,19 +38,29 @@ function App() {
                   showSignup={showSignup}
                   setShowSignup={setShowSignup}
                 />
-              ) : (
-              enterSite ?
+              ) : enterSite ? (
                 <>
-                  <Login showSignup={showSignup} setShowSignup={setShowSignup} />
+                  <Login
+                    showSignup={showSignup}
+                    setShowSignup={setShowSignup}
+                  />
                   <SignUp showSignup={showSignup} />
                 </>
-                :
-                <Container id='loginPage'>
+              ) : (
+                <Container id="loginPage">
                   <img src={logo} alt="logo" />
-                  <Button variant="contained" id="homeButton" onClick={() => setEnter(true)}>enter</Button>
+                  <Button
+                    variant="contained"
+                    id="homeButton"
+                    onClick={() => setEnter(true)}
+                  >
+                    enter
+                  </Button>
                 </Container>
-            } />
-          <Route path='/aboutus' element={<AboutUs />} />
+              )
+            }
+          />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
         <Footer />
       </Router>
