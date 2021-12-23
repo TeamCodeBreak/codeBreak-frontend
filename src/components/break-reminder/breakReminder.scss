@@ -3,11 +3,8 @@
   justify-content: center;
   align-items: center;
   width: 300px;
-  // background-color: red;
-  // text-align: center;
 
   #formControl {
-    // background-color: yellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,9 +14,8 @@
       justify-content: center;
       align-items: center;
       width: 25%;
-      font-family:fantasy; // TODO: custom Google font
-      // background-color: lime;
+      font-family: fantasy; // TODO: custom Google font
+      margin: 7px 0px 7px 0px;
     }
-
   }
 }

@@ -1,11 +1,13 @@
 import * as React from 'react';
-import './breakReminder.scss';
 import { useState, useEffect } from 'react';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+// import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import { FormControl, InputLabel, OutlinedInput } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import BreakReminderModal from '../break-modal/Modal';
+import './breakReminder.scss';
+import { When } from 'react-if';
 
 export default function BreakReminder() {
 
@@ -62,15 +64,18 @@ export default function BreakReminder() {
   }
 
   return (
+    // TODO: Implement modal for break reminder component
+    // <Modal>
     <div id="breakReminder">
       <Box className="time">
         <FormControl id='formControl' onSubmit={handleSubmit}>
-          <InputLabel>Next Break in...</InputLabel>
+          <InputLabel>Take next break in...</InputLabel>
           <OutlinedInput
             type='number'
             min='0'
             placeholder="Minutes"
             name="breaktime"
+            color="success"
             onChange={handleChange}>
           </OutlinedInput>
           <div id="timerDiv">
@@ -79,12 +84,15 @@ export default function BreakReminder() {
             <span className="second">{second}</span>
           </div>
           <Stack spacing={2} direction="row">
-            <Button variant="contained" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
-            <Button variant="contained" onClick={stopTimer}>Reset</Button>
+            <When condition={counter > 0}> {/*may not want to have this conditionally rendered */}
+              <Button variant="contained" color="success" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
+            </When>
+            <Button variant="contained" color="warning" onClick={stopTimer}>Reset</Button>
           </Stack>
         </FormControl>
         <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
       </Box>
-    </div>
+    </div >
+    // </Modal>
   );
 }

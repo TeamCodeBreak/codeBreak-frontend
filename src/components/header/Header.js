@@ -1,4 +1,4 @@
-import AppBar from '@mui/material/AppBar';
+// import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Switch } from '@mui/material';
@@ -49,7 +49,7 @@ function Header(props) {
         >
           codeBreak
         </Typography>
-        <div style={{ width: '10%', display: 'flex' }}>
+        <div id="logoutButtonDiv" style={{ width: '10%', display: 'flex' }}>
           <Logout
             showSignup={props.showSignup}
             setShowSignup={props.setShowSignup}
