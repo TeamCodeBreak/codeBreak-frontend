@@ -95,7 +95,7 @@ function Login(props) {
           </Box>
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginRight: '15px' }}>
             <div>
-              <Button sx={{ width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="outlined" onClick={handleSubmit}>
+              <Button sx={{ backgroundColor: 'dodgerblue', width: '100px', border: '1px solid green', borderRadius: '10px' }} variant="contained" onClick={handleSubmit}>
                 Login
               </Button>
               <Box>
