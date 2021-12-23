@@ -96,4 +96,5 @@ link to [software requirements](requirements.md) doc
 
 ## Resources Used
 
-- _[Brett Jordan - Unsplash - Rubber Duck](https://images.unsplash.com/photo-1559715541-5daf8a0296d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cnViYmVyJTIwZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)_
+- _[Unsplash - Brett Jordan - Rubber Duck](https://images.unsplash.com/photo-1559715541-5daf8a0296d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cnViYmVyJTIwZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)_
+- _[Wikimedia Commons - LittleT889 - Floss(dance).gif](https://commons.wikimedia.org/wiki/File:Floss_(dance).gif)_
