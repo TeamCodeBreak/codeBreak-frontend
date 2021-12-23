@@ -14,7 +14,7 @@ import { When } from "react-if";
 
 import { AuthContext } from '../../context/auth.js';
 
-function SignUp() {
+function SignUp(props) {
 
   let auth = useContext(AuthContext);
 
@@ -47,7 +47,7 @@ function SignUp() {
 
   return (
     <>
-      <When condition={!auth.isLoggedIn}>
+      <When condition={!auth.isLoggedIn && props.showSignup}>
         <FormControl onChange={handleChange}>
           <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-evenly' }}>
             <div>

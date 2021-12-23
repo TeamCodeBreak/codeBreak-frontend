@@ -6,11 +6,15 @@ import Food from '../food/Food.js';
 import './home.scss';
 
 // TODO: cookie login is not working
-function Home() {
+function Home(props) {
   return (
+
     <div className="home">
+
+  
       <Notes />
-      <Logout />
+      <Logout showSignup={props.showSignup} setShowSignup={props.setShowSignup} />
+
       <BreakReminder />
       <Food />
       <RubberDucky />

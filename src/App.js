@@ -10,7 +10,7 @@ import AboutUs from './components/about-us/AboutUs'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from './context/theme';
 // import "bootstrap/scss/bootstrap";
 
@@ -18,24 +18,25 @@ import { ThemeContext } from './context/theme';
 
 function App() {
 
-
   let auth = useContext(AuthContext);
   const theme = useContext(ThemeContext);
 
+  const [showSignup, setShowSignup] = React.useState(false);
+
   return (
-   <div className={theme.mode}>
+    <div className={theme.mode}>
       <Router>
         <Header />
         <Routes>
           <Route exact path='/'
-          element={auth.isLoggedIn 
-            ? <Home id="home" /> 
-            : <> 
-                <Login />
-                <SignUp/>
+            element={auth.isLoggedIn
+              ? <Home id="home" showSignup={showSignup} setShowSignup={setShowSignup} />
+              : <>
+                <Login showSignup={showSignup} setShowSignup={setShowSignup} />
+                <SignUp showSignup={showSignup} />
               </>
-          }/>
-          <Route path='/aboutus' element={<AboutUs />}/>
+            } />
+          <Route path='/aboutus' element={<AboutUs />} />
         </Routes>
         <Footer />
       </Router>

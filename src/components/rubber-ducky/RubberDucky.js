@@ -15,7 +15,7 @@ function RubberDucky() {
   return (
     <>
       <OverlayTrigger
-        trigger='hover'
+        trigger={['hover', 'hover']}
         key='overlayTrig'
         placement='top'
         id="overlayTrigger"
