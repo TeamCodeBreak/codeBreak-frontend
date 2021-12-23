@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
+import danceGif from '../../img/danceGif.gif';
 
 const style = {
   position: 'absolute',
@@ -35,7 +36,7 @@ function BreakReminderModal(props) {
         <Fade in={props.open}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              Great job dev!
+              Great job dev!<br></br><img src={danceGif} alt="dancing gif" />
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
               Time to take a break. Go for it!
