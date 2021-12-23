@@ -1,0 +1,83 @@
+#formContainer{
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #d6d8db;
+  width:300px;
+  height: 350px;
+  border-radius: 8px;
+  opacity: 90%;
+}
+.light{
+  #formContainer{
+    background-color: #d6d8db;
+  
+      h2{
+        color: #6C6B70;
+      }
+    
+      #buttonCont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        #createAccount{
+          color: #7C8288;
+          font-size: 20px;
+          margin-bottom: 6%;
+        }
+    
+        #loginButton{
+          background-color: #e5ecf4;
+          color:#7C8288;
+          width: 100px;
+          border-radius: 10px;
+          transition: all 0.6s ease-in-out;
+        }
+    
+        #loginButton:hover{
+          background-color: #f7f8f9;
+          border-color: #f7f8f9;
+        }
+      }
+  }
+}
+.dark{
+  #formContainer{
+    background-color: hsl(0, 1%, 42%);
+    // background-color: #4B575D;
+    // color: #99adb0;
+    h2{
+      color: #cbd2d9;
+    }
+  
+    #buttonCont{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      #createAccount{
+        color: #99adb0;
+        font-size: 20px;
+        margin-bottom: 6%;
+      }
+  
+      #loginButton{
+        background-color: #bfc5cd;
+        color:#4B575D;
+        width: 100px;
+        border-radius: 10px;
+        transition: all 0.6s ease-in-out;
+      }
+  
+      #loginButton:hover{
+        background-color: #dadee2;
+        border-color: #dadee2;
+      }
+    }
+  }
+}

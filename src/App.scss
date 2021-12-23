@@ -8,7 +8,6 @@
 .dark {
   text-align: center;
   background: rgb(20, 20, 20);
-  color: rgb(243, 192, 251);
   height: 100%;
   background-repeat: no-repeat;
   background-image: url('./assets/darkBackground.jpg');
@@ -33,10 +32,9 @@
   text-align: center;
   height: 100%;
   background: rgb(161, 161, 161);
-  color: rgb(42, 24, 24);
   background-repeat: no-repeat;
-  background-image: url('./assets/lightBackground.jpg');
-  background-position: top;
+  background-image: url('./assets/whiteBackground.jpg');
+  background-position: center;
   background-attachment: fixed;
   background-size: 100%;
 

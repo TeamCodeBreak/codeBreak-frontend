@@ -1,3 +1,18 @@
-#logoutButton {
+#logoutButtonCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 10px;
+
+  #logoutButton{
+  background-color: #4B575D;
+  width: 90px;
+  font-size: 15px;
+  transition: all 0.6s ease-in-out;
+  }
+  #logoutButton:hover{
+    background-color: #BBC1C8;
+    border-color: #BBC1C8;
+  }
 }
+
