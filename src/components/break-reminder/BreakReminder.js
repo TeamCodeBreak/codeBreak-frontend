@@ -87,7 +87,9 @@ export default function BreakReminder() {
             <When condition={counter > 0}> {/*may not want to have this conditionally rendered */}
               <Button variant="contained" color="success" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
             </When>
-            <Button variant="contained" color="warning" onClick={stopTimer}>Reset</Button>
+            <When condition={counter > 0}>
+              <Button variant="contained" color="warning" onClick={stopTimer}>Reset</Button>
+            </When>
           </Stack>
         </FormControl>
         <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
