@@ -1,16 +1,17 @@
 // TODO: onHover & onClick -> text box appears with "Wanna chat?" -> if yes, click text box, brings up emulated phone, allows you to talk with no interaction, give a brief description of rubber ducky, just talk out loud. if no, click away from duck or maybe an [X] button
-// EXTREME-STRETCH: voice integration? record your voice and save it? have it playback words (closed caption style)
 
 import React from 'react';
 import Image from 'react-bootstrap/Image';
 import { OverlayTrigger, PopoverBody, PopoverHeader, Popover } from 'react-bootstrap';
-import duckyImage from '../../img/rubberDucky.png';
+import duckyImage from '../../img/simpleDuck.png';
 import './rubber-ducky.scss';
 
 function RubberDucky() {
 
   // TODO: user does not want duck on screen, option to hide the duck, which then renders a button on side of screen to being him back
-  // handleHide();
+
+  // -------- function handleHide(); ------> this should not completely hide Spencer, it should appear as a sidebar button or another element/component that 
+  // -------- function handleClick(e); ------> maybe this can link to an external website or a built-in popup or modal.
 
   return (
     <>

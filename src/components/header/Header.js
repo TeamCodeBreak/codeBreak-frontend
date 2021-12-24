@@ -34,12 +34,12 @@ function Header(props) {
   return (
     <Box sx={{ flexGrow: 1 }} data-testid="header">
       <div style={themeStyle} className="header1" position="static" id="navBar">
+        {/* TODO: Need to persist theme selection across page switches */}
         {theme.mode === 'light' ?
-          <img src={darkLogo} alt="logo" id="title" />
-          : <img src={lightLogo} alt="logo" id="title" />}
+          <a href="/"> <img src={darkLogo} alt="logo" id="title" /></a>
+          : <a href="/"> <img src={lightLogo} alt="logo" id="title" /></a>}
         <div id="login-switch-container">
-        <When condition={!auth.isLoggedIn}>
-          
+          <When condition={!auth.isLoggedIn}>
             <Typography
               className="loginHome"
               variant="h5"
@@ -50,22 +50,26 @@ function Header(props) {
             >
               login
             </Typography>
-
-        </When>
-        <When condition={auth.isLoggedIn}>
+          </When>
+          <When condition={auth.isLoggedIn}>
             <Logout
               showSignup={props.showSignup}
               setShowSignup={props.setShowSignup}
             />
-        </When>
-        <Switch
-          id='switch'
-          color="default"
-          className="switch-theme"
-          onClick={() =>
-            theme.setMode(theme.mode === 'light' ? 'dark' : 'light')
-          }
-        ></Switch>
+          </When>
+          <div id="themeSwitch">
+            <Switch
+              id='switch'
+              color="default"
+              className="switch-theme"
+              onClick={() =>
+                theme.setMode(theme.mode === 'light' ? 'dark' : 'light')
+              }
+            />
+            <span id="themeSpan">
+              Theme
+            </span>
+          </div>
         </div>
       </div>
     </Box >

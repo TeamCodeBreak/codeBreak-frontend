@@ -26,8 +26,8 @@ function App() {
   return (
     <div className={theme.mode}>
       <Router>
-        <Header 
-          showSignup={showSignup} 
+        <Header
+          showSignup={showSignup}
           setShowSignup={setShowSignup}
           setEnter={setEnter} />
         <Routes>
@@ -39,7 +39,7 @@ function App() {
                 <Home
                   id="home"
                   showSignup={showSignup}
-                  setShowSignup={setShowSignup}/>
+                  setShowSignup={setShowSignup} />
               ) : enterSite ? (
                 <>
                   <Login
@@ -50,9 +50,9 @@ function App() {
                 </>
               ) : (
                 <Container id="loginPage">
-                  {theme.mode === 'light' ? 
-                  <img src={darkLogo} alt="logo" />
-                  : <img src={lightLogo} alt="logo" />}
+                  {theme.mode === 'light' ?
+                    <img src={darkLogo} alt="logo" />
+                    : <img src={lightLogo} alt="logo" />}
                   <Button
                     variant="contained"
                     id="homeButton"

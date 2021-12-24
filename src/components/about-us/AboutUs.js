@@ -5,9 +5,18 @@ import CircularProgress from '@mui/material/CircularProgress';
 export default function CircularColor() {
   return (
     <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
-      <CircularProgress color="secondary" />
-      <CircularProgress color="success" />
-      <CircularProgress color="inherit" />
+      <h1>About Us Coming Soon
+        <br></br>Harvey 👨🏻‍🎓
+        <CircularProgress color="error" />
+        <br></br>Marquesa 🧑🏻‍🎓
+        <CircularProgress color="warning" />
+        <br></br>Roop 👨🏽‍🎓
+        <CircularProgress color="error" />
+        <br></br>Sarah 👩🏻‍🎓
+        <CircularProgress color="warning" />
+        <br></br>Christopher 👨🏻‍🎓
+        <CircularProgress color="error" />
+      </h1>
     </Stack>
   );
 }
