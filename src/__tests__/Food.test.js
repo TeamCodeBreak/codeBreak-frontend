@@ -9,8 +9,8 @@ const server = setupServer(
   rest.get('*', (req, res, ctx) => {
     return res(
       ctx.json({
-        name: 'Waffle Window',
-        address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
+        results: [{name: 'Waffle Window'}],
+        // address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
       })
     )
   })
@@ -23,11 +23,16 @@ beforeAll(()=>{
 describe('Testing the Food Component', () => {
 it('Should send response when called upon food api', async()=>{
 
-  // await waitFor(()=>{
-  //   screen.getByTestId('name');
-  //   scree.getByTestId('address')
-  // })
-  expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
+  render(<Food/>)
+
+  await waitFor(()=>{
+    screen.getByTestId('results');
+    // screen.getByTestId('address')
+  })
+  expect(screen.getByTestId('results')).toBeInTheDocument();
+  // expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
+
+
 })
 
 })
