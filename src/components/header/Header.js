@@ -7,8 +7,9 @@ import { useContext } from 'react';
 import Logout from '../logout/Logout';
 import { When } from 'react-if';
 import { AuthContext } from '../../context/auth.js';
-import lightLogo from '../../assets/codebrLogoLight.png'
-import darkLogo from '../../assets/codebrLogoDark.png'
+import lightLogo from '../../assets/codebrLogoLight.png';
+import darkLogo from '../../assets/codebrLogoDark.png';
+import { Link } from '@mui/material';
 
 function Header(props) {
   let theme = useContext(ThemeContext);
@@ -39,6 +40,7 @@ function Header(props) {
           <a href="/"> <img src={darkLogo} alt="logo" id="title" /></a>
           : <a href="/"> <img src={lightLogo} alt="logo" id="title" /></a>}
         <div id="login-switch-container">
+          <Link to="/AboutUs">Socials</Link>
           <When condition={!auth.isLoggedIn}>
             <Typography
               className="loginHome"
