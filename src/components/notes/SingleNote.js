@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './notes.scss';
+import Paper from '@mui/material/Paper';
 
 export default function SingleNote(props) {
   const [value, setValue] = useState('');
@@ -11,7 +13,7 @@ export default function SingleNote(props) {
   }
 
   return (
-    <li className="note" key={props.note.id}>
+    <Paper elevation={3} className="note" key={props.note.id}>
       <div className="note__text">
         {props.note.notes}
         <button
@@ -31,6 +33,6 @@ export default function SingleNote(props) {
         onKeyPress={handleValue}
         onChange={e => setValue(e.target.value)}
       ></input>
-    </li>
+    </Paper>
   );
 }

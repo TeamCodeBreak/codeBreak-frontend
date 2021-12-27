@@ -1,6 +1,64 @@
+.dark {
+  #homeCont{
+    background: rgb(20, 20, 20);
+    height:1920px;
+  }
+
+  #hungryButton{
+    background-color: #BBC1C8;
+    color: #f6f7f8;
+    width: 200px;
+    font-size: 30px;
+    transition: all 0.6s ease-in-out;
+    box-shadow: 6px 6px 6px #5d5c5c;
+  }
+
+  #hungryButton:hover{
+    background-color: #d1d9e3;
+    color: #ffffff;
+  }
+}
+
+.light {
+  #homeCont{
+    background: rgb(244, 244, 244);
+    height:1920px;
+  }
+
+  #hungryButton{
+    background-color: #acbdc0;
+    width: 200px;
+    font-size: 30px;
+    transition: all 0.6s ease-in-out;
+    box-shadow: 6px 6px 6px #a7a6a6;
+  }
+  #hungryButton:hover{
+    background-color: #bfced1;
+    border-color: #BBC1C8;
+  }
+}
+
+#banner {
+  width:1080px;
+  border-radius: 10px;
+}
+
 .home {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 3rem;
+
+  
+}
+
+#notesCont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:800px;
+  margin-left: auto;
+  margin-right: auto;
 }

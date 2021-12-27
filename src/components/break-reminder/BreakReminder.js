@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 // import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import { FormControl, InputLabel, OutlinedInput } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import BreakReminderModal from '../break-modal/Modal';
+import { ThemeContext } from '../../context/theme';
 import './breakReminder.scss';
 import { When } from 'react-if';
 
 export default function BreakReminder() {
+  const theme = useContext(ThemeContext);
 
   const [second, setSecond] = useState('00');
   const [minute, setMinute] = useState('00');
@@ -64,37 +66,38 @@ export default function BreakReminder() {
   }
 
   return (
-    // TODO: Implement modal for break reminder component
-    // <Modal>
-    <div id="breakReminder">
-      <Box className="time">
-        <FormControl id='formControl' onSubmit={handleSubmit}>
-          <InputLabel>Take next break in...</InputLabel>
-          <OutlinedInput
-            type='number'
-            min='0'
-            placeholder="Minutes"
-            name="breaktime"
-            color="success"
-            onChange={handleChange}>
-          </OutlinedInput>
-          <div id="timerDiv">
-            <span className="minute">{minute}</span>
-            <span>:</span>
-            <span className="second">{second}</span>
-          </div>
-          <Stack spacing={2} direction="row">
-            <When condition={counter > 0}> {/*may not want to have this conditionally rendered */}
-              <Button variant="contained" color="success" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
-            </When>
-            <When condition={counter > 0}>
-              <Button variant="contained" color="warning" onClick={stopTimer}>Reset</Button>
-            </When>
-          </Stack>
-        </FormControl>
-        <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
-      </Box>
-    </div >
+    <div className={theme.mode}>
+      <div id="breakReminder">
+        <Box className="time">
+          <h2>Let's break in...</h2>
+          <FormControl id='formControl' onSubmit={handleSubmit}>
+            <InputLabel id="formInput">Take your next break in...</InputLabel>
+            <OutlinedInput
+              id="outlinedInput"
+              type='number'
+              min='0'
+              placeholder="Minutes"
+              name="breaktime"
+              onChange={handleChange}>
+            </OutlinedInput>
+            <div id="timerDiv">
+              <span className="minute">{minute}</span>
+              <span>:</span>
+              <span className="second">{second}</span>
+            </div>
+            <Stack spacing={2} direction="row">
+              <When condition={counter > 0}> {/*may not want to have this conditionally rendered */}
+                <Button variant="contained" id="startTimer" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
+              </When>
+              <When condition={counter > 0}>
+                <Button variant="contained" id="resetTimer" onClick={stopTimer}>Reset</Button>
+              </When>
+            </Stack>
+          </FormControl>
+          <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
+        </Box>
+      </div >
+      </div >
     // </Modal>
   );
 }

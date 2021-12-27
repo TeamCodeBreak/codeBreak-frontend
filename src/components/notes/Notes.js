@@ -3,10 +3,13 @@ import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../context/auth';
 import SingleNote from './SingleNote';
+import TextField from '@mui/material/TextField';
+import { ThemeContext } from '../../context/theme';
 
 const url = process.env.REACT_APP_URL;
 export default function Notes() {
   const auth = useContext(AuthContext);
+  const theme = useContext(ThemeContext);
   const [notes, setNotes] = useState([]);
   const [value, setValue] = useState('');
   const [updateValue, setUpdateValue] = useState('');
@@ -92,26 +95,30 @@ export default function Notes() {
   }
   return (
     <>
-      <div className="notes__parent">
-
-        <input
-          className="input__notes"
-
-          type="text"
-          value={value}
-          placeholder="Enter your thoughts!"
-          onKeyPress={handleAddNote}
-          onChange={e => setValue(e.target.value)}
-        ></input>
-        {notes[0] &&
-          notes.map(note => (
-            <SingleNote
-              note={note}
-              handleDelete={handleDelete}
-              handleUpdateNote={handleUpdateNote}
-              updateValue={updateValue}
+      <div className={theme.mode}>
+        <div id="notesCont">
+          <div id="notePadTitle">
+            <h2>Write it out.</h2>
+            <TextField label="Enter your thoughts!" variant="outlined"
+              className="input__notes"
+              type="text"
+              value={value}
+              onKeyPress={handleAddNote}
+              onChange={e => setValue(e.target.value)}
             />
-          ))}
+          </div>
+          <div className="notes__parent">
+            {notes[0] &&
+              notes.map(note => (
+                <SingleNote
+                  note={note}
+                  handleDelete={handleDelete}
+                  handleUpdateNote={handleUpdateNote}
+                  updateValue={updateValue}
+                />
+              ))}
+          </div>
+        </div>
       </div>
     </>
   );
