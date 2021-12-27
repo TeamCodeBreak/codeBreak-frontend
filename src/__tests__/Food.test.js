@@ -20,3 +20,18 @@ beforeAll(()=>{
   server.listen
 })
 
+describe('Testing the Food Component', () => {
+it('Should send response when called upon food api', async()=>{
+
+  await waitFor(()=>{
+    screen.getByTestId('name');
+    scree.getByTestId('address')
+  })
+  expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
+})
+
+
+it('Should render data came from food api')
+
+
+})
