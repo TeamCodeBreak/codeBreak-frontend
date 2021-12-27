@@ -6,6 +6,7 @@ import PermContactCalendarRoundedIcon from '@mui/icons-material/PermContactCalen
 import CopyrightRoundedIcon from '@mui/icons-material/CopyrightRounded';
 import AlternateEmailRoundedIcon from '@mui/icons-material/AlternateEmailRounded';
 import './footer.scss';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const [value, setValue] = React.useState(0);
@@ -20,7 +21,8 @@ function Footer() {
       >
         <BottomNavigationAction label="Copyright" icon={<CopyrightRoundedIcon />} />
         <BottomNavigationAction label="Contact" icon={<PermContactCalendarRoundedIcon />} />
-        <BottomNavigationAction href="/AboutUs" label="Socials" icon={<AlternateEmailRoundedIcon />} />
+        <Link to="/AboutUs">Socials</Link>
+        <BottomNavigationAction label="Socials" icon={<AlternateEmailRoundedIcon />} />
       </BottomNavigation>
     </Box>
   );
