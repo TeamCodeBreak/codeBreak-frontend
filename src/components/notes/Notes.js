@@ -36,13 +36,12 @@ export default function Notes() {
     };
     let response = await axios.get(`${url}/notes`, config);
     let data = response.data;
-
     let sortData = data.sort((a, b) => {
       return a.id - b.id;
-    })
+    });
 
     console.log('sort', sortData);
-    setNotes(response.data);
+    setNotes(data);
   }
 
   async function handleAddNote(e) {
@@ -63,7 +62,6 @@ export default function Notes() {
     }
   }
   async function handleUpdateNote(e) {
-
     e.preventDefault();
     let config = {
       headers: {
@@ -74,15 +72,11 @@ export default function Notes() {
       notes: e.target.value,
     };
 
-    await axios.put(
-      `${url}/notes/${e.target.id}`,
-      obj,
-      config
-    );
+
+    await axios.put(`${url}/notes/${e.target.id}`, obj, config);
+
     setRun(!run);
     setUpdateValue('');
-
-
   }
 
   async function handleDelete(e) {
@@ -91,6 +85,7 @@ export default function Notes() {
         Authorization: `Bearer ${auth.token}`,
       },
     };
+
    await axios.delete(`${url}/notes/${e.target.id}`, config);
 
     setRun(!run);
@@ -101,18 +96,22 @@ export default function Notes() {
         <div id="notesCont">
           <div id="notePadTitle">
             <h2>Write it out.</h2>
-            <TextField label="Enter your thoughts!" variant="outlined"
+            <TextField
+              label="Enter your thoughts!"
+              variant="outlined"
               className="input__notes"
               type="text"
               value={value}
               onKeyPress={handleAddNote}
               onChange={e => setValue(e.target.value)}
+              data-testid="input"
             />
           </div>
-          <div className="notes__parent">
+          <div className="notes__parent" data-testid="notes">
             {notes[0] &&
               notes.map(note => (
                 <SingleNote
+                  data-testid={note}
                   note={note}
                   handleDelete={handleDelete}
                   handleUpdateNote={handleUpdateNote}

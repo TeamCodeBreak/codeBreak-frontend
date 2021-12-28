@@ -13,13 +13,19 @@ export default function SingleNote(props) {
   }
 
   return (
-    <Paper elevation={3} className="note" key={props.note.id}>
+    <Paper
+      elevation={3}
+      className="note"
+      key={props.note.id}
+      data-testid={props.note.notes}
+    >
       <div className="note__text">
         {props.note.notes}
         <button
           className="note__delete"
           onClick={props.handleDelete}
           id={props.note.id}
+          data-testid="delete-button"
         >
           x
         </button>
@@ -32,6 +38,7 @@ export default function SingleNote(props) {
         id={props.note.id}
         onKeyPress={handleValue}
         onChange={e => setValue(e.target.value)}
+        data-testid="update"
       ></input>
     </Paper>
   );
