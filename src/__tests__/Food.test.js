@@ -42,8 +42,6 @@ it('Should send response when called upon food api', async()=>{
   expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
   expect(screen.getByTestId('4708 NW Bethany Blvd, Beaverton, OR 97229-9258')).toBeInTheDocument();
 
-
-
 })
 
 })
