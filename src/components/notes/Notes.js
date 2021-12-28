@@ -74,7 +74,7 @@ export default function Notes() {
       notes: e.target.value,
     };
 
-    let response = await axios.put(
+    await axios.put(
       `${url}/notes/${e.target.id}`,
       obj,
       config
@@ -91,7 +91,7 @@ export default function Notes() {
         Authorization: `Bearer ${auth.token}`,
       },
     };
-    let response = await axios.delete(`${url}/notes/${e.target.id}`, config);
+   await axios.delete(`${url}/notes/${e.target.id}`, config);
 
     setRun(!run);
   }
