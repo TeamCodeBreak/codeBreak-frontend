@@ -1,36 +1,45 @@
 import { rest } from "msw";
 import { setupServer } from 'msw/node';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import {act} from 'react-dom/test-utils'
 
 import Food from '../components/food/Food';
 
 const server = setupServer(
-  rest.get('*', (req, res, ctx) => {
+  
+  rest.post('https://code-break-server.herokuapp.com/food', (req, res, ctx) => {
+ 
     return res(
       ctx.json({
-        results: [{name: 'Waffle Window'}],
+        data: [{
+          name: 'Waffle Window',
+          address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
+      }],
         // address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
       })
     )
   })
 );
 
-beforeAll(()=>{
-  server.listen
-})
+beforeAll(() => server.listen())
+afterEach(() => server.resetHandlers())
+afterAll(() => server.close())
 
 describe('Testing the Food Component', () => {
 it('Should send response when called upon food api', async()=>{
 
   render(<Food/>)
-
-  await waitFor(()=>{
-    screen.getByTestId('results');
-    // screen.getByTestId('address')
+  const button = screen.getByRole('button')
+  act(() => {
+   fireEvent.submit(button)
   })
-  expect(screen.getByTestId('results')).toBeInTheDocument();
-  // expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
+  await waitFor(()=>{
+    screen.getByTestId('data');
+    screen.getAllByTestId('Waffle Window')
+  })
+  expect(screen.getByTestId('data')).toBeInTheDocument();
+  expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
 
 
 })

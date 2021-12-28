@@ -39,7 +39,7 @@ export default function Food() {
         justifyContent: 'flex-end',
       }}
     >
-      <div data-testid="results">
+      <div data-testid="data">
         <form onSubmit={findRestaurant}>
           <TextField
             onChange={e => setFormData(e.target.value)}
