@@ -107,9 +107,26 @@ describe('Testing the Notes Component', () => {
       const input = screen.getByTestId('input');
       fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
       await waitFor(() => {
-        screen.getByTestId('Roop Cafe');
+        screen.getByTestId('Roop Cafe 2');
       });
-      expect(screen.getByTestId('Roop Cafe')).toBeInTheDocument();
+      expect(screen.getByTestId('Roop Cafe 2')).toBeInTheDocument();
+    });
+  });
+  it('Should PUT an updated note', () => {
+    act(async () => {
+      render(
+        <AuthProvider>
+          <ThemeProvider>
+            <Notes />
+          </ThemeProvider>
+        </AuthProvider>
+      );
+      const update = screen.getByTestId('update');
+      fireEvent.keyPress(update, { key: 'Enter', code: 13, charCode: 13 });
+      await waitFor(() => {
+        screen.getByTestId('Roop Cafe 2');
+      });
+      expect(screen.getByTestId('Roop Cafe 2')).toBeInTheDocument();
     });
   });
 });

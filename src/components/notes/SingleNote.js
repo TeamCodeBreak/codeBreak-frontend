@@ -38,6 +38,7 @@ export default function SingleNote(props) {
         id={props.note.id}
         onKeyPress={handleValue}
         onChange={e => setValue(e.target.value)}
+        data-testid="update"
       ></input>
     </Paper>
   );
