@@ -13,18 +13,19 @@ afterAll(() => server.close());
 
 describe('Testing the Auth Context Provider', () => {
 
-  let Test = () => {
-    let auth = useContext(AuthContext);
-    return (
+  let Test = () => (
+    <AuthContext.Consumer>
+    {context => (
       <>
-        <p data-testid="user">{auth.user?.username}</p>
-        <p data-testid="isLoggedIn">{JSON.stringify(auth.isLoggedIn)}</p>
+        <p data-testid="user">{context.user?.username}</p>
+        <p data-testid="isLoggedIn">{JSON.stringify(context.isLoggedIn)}</p>
         <Login data-testid="login"></Login>
         {/* <button data-testid="login" onClick={() => auth.login('test', 'test')}>Login</button> */}
-        <button data-testid="logout" onClick={() => auth.logout()}>Logout</button>
+        <button data-testid="logout" onClick={() => context.logout()}>Logout</button>
       </>
-    )
-  }
+      )}
+    </AuthContext.Consumer>
+  )
 
   beforeEach(async () => {
     render(
