@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   Button,
@@ -32,6 +32,10 @@ export default function Food() {
     setData(filteredResponse);
   }
 
+  function clearResults() {
+    setData([]);
+  }
+
   return (
     <div
       style={{
@@ -60,6 +64,18 @@ export default function Food() {
           >
             Find
           </Button>
+          <Button
+            variant="contained"
+            style={{
+              width: 'auto',
+              height: '3.4rem',
+
+              backgroundColor: 'lightBlue',
+            }}
+            onClick={clearResults}
+          >
+            Clear
+          </Button>
         </form>
         {data &&
           data.map((foodPlace, idx) => (
@@ -71,11 +87,20 @@ export default function Food() {
                 style={{ width: 350, background: 'lightBlue', color: 'white' }}
               >
                 <CardActionArea>
-                  <CardContent >
-                    <Typography gutterBottom variant="h5" data-testid= {foodPlace.name} component="div">
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      data-testid={foodPlace.name}
+                      component="div"
+                    >
                       {foodPlace.name}
                     </Typography>
-                    <Typography variant="body2" data-testid={foodPlace.address}color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      data-testid={foodPlace.address}
+                      color="text.secondary"
+                    >
                       {foodPlace.address}
                     </Typography>
                   </CardContent>
