@@ -39,7 +39,7 @@ export default function Food() {
         justifyContent: 'flex-end',
       }}
     >
-      <div>
+      <div data-testid="data">
         <form onSubmit={findRestaurant}>
           <TextField
             onChange={e => setFormData(e.target.value)}
@@ -71,11 +71,11 @@ export default function Food() {
                 style={{ width: 350, background: 'lightBlue', color: 'white' }}
               >
                 <CardActionArea>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                  <CardContent >
+                    <Typography gutterBottom variant="h5" data-testid= {foodPlace.name} component="div">
                       {foodPlace.name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" data-testid={foodPlace.address}color="text.secondary">
                       {foodPlace.address}
                     </Typography>
                   </CardContent>
