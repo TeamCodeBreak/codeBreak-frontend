@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c75ef47d.chunk.css",
+    "main.js": "/static/js/main.2fc0ca20.chunk.js",
+    "main.js.map": "/static/js/main.2fc0ca20.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7df828c6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7df828c6.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.bf18546e.chunk.js": "/static/js/2.bf18546e.chunk.js",
+    "static/js/2.bf18546e.chunk.js.map": "/static/js/2.bf18546e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.c75ef47d.chunk.css.map": "/static/css/main.c75ef47d.chunk.css.map",
+    "static/js/2.bf18546e.chunk.js.LICENSE.txt": "/static/js/2.bf18546e.chunk.js.LICENSE.txt",
+    "static/media/bannerDark.3acfecd2.png": "/static/media/bannerDark.3acfecd2.png",
+    "static/media/codebrLogoDark.3d22edb1.png": "/static/media/codebrLogoDark.3d22edb1.png",
+    "static/media/codebrLogoDarkHome.1f3b2050.png": "/static/media/codebrLogoDarkHome.1f3b2050.png",
+    "static/media/codebrLogoLight.d06941b0.png": "/static/media/codebrLogoLight.d06941b0.png",
+    "static/media/codebrLogoLightHome.a55f33c5.png": "/static/media/codebrLogoLightHome.a55f33c5.png",
+    "static/media/danceGif.99c70c53.gif": "/static/media/danceGif.99c70c53.gif",
+    "static/media/App.scss": "/static/media/whiteBackground.031c12b1.jpg",
+    "static/media/rubberDucky.506b90a6.png": "/static/media/rubberDucky.506b90a6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7df828c6.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.bf18546e.chunk.js",
+    "static/css/main.c75ef47d.chunk.css",
+    "static/js/main.2fc0ca20.chunk.js"
+  ]
+}
