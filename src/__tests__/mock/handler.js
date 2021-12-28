@@ -2,7 +2,7 @@ import { rest } from 'msw'
 import base64 from 'base-64';
 
 export const handlers = [
-  rest.post('https://code-break-server.herokuapp.com/signup', (req, res, ctx) => {
+  rest.post(`${process.env.REACT_APP_URL}/signup`, (req, res, ctx) => {
     let basic = req.headers._headers.authorization.split(' ').pop();
     let [user, pass] = base64.decode(basic).split(':');
 
@@ -16,15 +16,15 @@ export const handlers = [
     );
   }),
 
-  rest.get('https://code-break-server.herokuapp.com/signin', (req, res, ctx) => {
+  rest.get(`${process.env.REACT_APP_URL}/signin`, (req, res, ctx) => {
     const user = {
-      user: { username: req.user, password: req.pass},
+      user: { username: req.username, password: req.password},
       token: 'mytokenhere',
     };
   
     return res(
       ctx.status(201),
-      ctx.json([{user}])
+      ctx.json([user])
     );
   }),
 ]
