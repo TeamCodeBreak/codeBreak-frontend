@@ -3,12 +3,17 @@
 
 import React from 'react';
 import Image from 'react-bootstrap/Image';
-import { OverlayTrigger, PopoverBody, PopoverHeader, Popover } from 'react-bootstrap';
-import duckyImage from '../../img/rubberDucky.png';
+import {
+  OverlayTrigger,
+  PopoverBody,
+  PopoverHeader,
+  Popover,
+} from 'react-bootstrap';
+// import duckyImage from '../../img/rubberDucky.png';
+import duckyImage from '../../assets/simpleDuck.png';
 import './rubber-ducky.scss';
 
 function RubberDucky() {
-
   // TODO: user does not want duck on screen, option to hide the duck, which then renders a button on side of screen to being him back
   // handleHide();
 
@@ -18,20 +23,31 @@ function RubberDucky() {
         trigger={['hover', 'hover']}
         key='overlayTrig'
         placement='top'
-        id="overlayTrigger"
+        id='overlayTrigger'
         overlay={
           <Popover id='popoverId'>
             <PopoverHeader as='h3' id='popoverHeader'>
-              {'Hey Dev!'}<br></br>{'Spencer here.'}<br></br><br></br>{'You can tell me anything!'}
+              {'Hey Dev!'}
+              <br></br>
+              {'Spencer here.'}
+              <br></br>
+              <br></br>
+              {'You can tell me anything!'}
             </PopoverHeader>
             <PopoverBody id='popoverBody'>
-              <p>As your deskmate, I am here to entertain all of your thoughts, ideas and curiosities.</p>
-              <p>My job is to lend you a listening ear as you build, debug, and reconstruct.</p>
+              <p>
+                As your deskmate, I am here to entertain all of your thoughts,
+                ideas and curiosities.
+              </p>
+              <p>
+                My job is to lend you a listening ear as you build, debug, and
+                reconstruct.
+              </p>
             </PopoverBody>
           </Popover>
         }
       >
-        <Image src={duckyImage} id="rubberDucky" class="ducky" />
+        <Image src={duckyImage} id='rubberDucky' class='ducky' />
       </OverlayTrigger>
     </>
   );
