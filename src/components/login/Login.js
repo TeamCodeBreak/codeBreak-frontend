@@ -28,8 +28,15 @@ function Login(props) {
     showPassword: false
   });
 
-  const handleChange = (value) => (event) => {
-    setValues({ ...values, [value]: event.target.value });
+
+  let handleChange = (e) => {
+    e.preventDefault();
+    setValues((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
   };
 
   const handleClickShowPassword = () => {
@@ -51,6 +58,7 @@ function Login(props) {
 
   return (
     <>
+    
       <When condition={!auth.isLoggedIn && !props.showSignup}>
         <div className={theme.mode}>
           <Container id="formContainer">
@@ -68,7 +76,8 @@ function Login(props) {
                         id="outlined-adornment-username"
                         type={values ? 'text' : 'username'}
                         value={values.username}
-                        onChange={handleChange('username')}
+                        name='username'
+                        onChange={handleChange}
                         endAdornment={
                           <InputAdornment position="end">
                             <AccountCircle sx={{ color: 'action.active', mr: -0.5, my: 0 }} />
@@ -87,7 +96,8 @@ function Login(props) {
                       id="outlined-adornment-password"
                       type={values.showPassword ? 'text' : 'password'}
                       value={values.password}
-                      onChange={handleChange('password')}
+                      name='password'
+                      onChange={handleChange}
                       endAdornment={
                         <InputAdornment position="end">
                           <IconButton
