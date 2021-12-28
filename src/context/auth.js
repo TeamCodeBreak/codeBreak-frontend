@@ -57,7 +57,7 @@ function AuthProvider({ children }) {
       setLogInState(true, token, user);
     } catch (e) {
       setLogInState(false, null, {});
-      throw new Error(e);
+      // throw new Error(e);
     }
   }
 
