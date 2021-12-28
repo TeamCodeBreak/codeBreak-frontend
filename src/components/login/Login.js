@@ -62,6 +62,9 @@ function Login(props) {
                     <FormControl id="usernameLogin" sx={{ m: 1, width: '25ch' }} variant="outlined">
                       <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
                       <OutlinedInput
+                        inputProps={{
+                          'data-testid': 'username-field'
+                        }}
                         id="outlined-adornment-username"
                         type={values ? 'text' : 'username'}
                         value={values.username}
@@ -78,6 +81,9 @@ function Login(props) {
                   <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
+                      inputProps={{
+                        'data-testid': 'password-field'
+                      }}
                       id="outlined-adornment-password"
                       type={values.showPassword ? 'text' : 'password'}
                       value={values.password}
@@ -107,7 +113,7 @@ function Login(props) {
                   }}>
                   create an account
                 </Link>
-                <Button id="loginButton" variant="contained" onClick={handleSubmit}>
+                <Button id="loginButton" data-testid="login" variant="contained" onClick={handleSubmit}>
                   Login
                 </Button>
                 {/* <When condition={values.password}>
