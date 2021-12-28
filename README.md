@@ -1,30 +1,71 @@
-# _codeBreak_
+<div align="center">
+<img width="200px" src="./assets/codebrLogo.png">
+</div>
+<h1 align="center">The dev mind you've been waiting for...</h1> 
 
-## Who We Are
+## Authors: Marquesa Asmussen, Christopher Burk, Sarah Creager, Roop Hayer, Harvey Lucas
 
-Team `code<br>`
+## Version: 1.0.0
 
-    - Christopher Burk
-    - Harvey Lucas
-    - Sarah Creager
-    - Marquesa Asmussen
-    - Roop Hayer
+## About
 
-## Application Description
+`code<br>` is an application dashboard for developers that provides break reminders, food suggestions, a notepad for thoughts/insights/reminders, and a rubby ducky programming companion. This app is integrated with basic and bearer auth login for additional security and includes an extensive test suite.
 
-App that helps you find balance and a healthy headspace as a developer. The dev mind you've been waiting for. We are on a mission to make healthier devs so they can build a better world.
+## Our Mission
 
-## Problem Points codeBreak Addresses
+We are on a mission to make healthier devs so they can build a better world. Our application helps you find balance and a healthy headspace as a developer.
 
-    - Forgetting to take breaks and sitting for hours on end.
-    - Getting into a negative mental space when you get stuck on a problem or overwhelmed.
-    - Focusing on overall health.
-    - Preventing developer burnout.
-    - Overall emphasis is that the application needs to be inviting and easy to use.
+## Problem Domain
 
-## Wireframe
+You just need 20 more minutes to solve this bug...okay maybe 30 more minutes. You glance up at the clock in frustration. 2 hours have passed. Then you realize you haven't eaten lunch...
 
-![wireframe screenshot](assets/wireframe.png)
+If you're a developer, you can probably relate to this. Forgetting to take breaks, sitting for hours on end, getting frustrated when you've been stuck on the same problem for hours on end. We've all been there. So our team of developers at `code<br` set out to change that and to help prevent developer burnout. The overall emphasis of our application is to help you find balance and create a healthy headspace. When you're feeling drained, come to `code<br>` and reboot.
+
+## Project Overview
+
+| Title      | Languages/Frameworks/Libraries/Tools |
+| ----------- | ----------- |
+| Frontend | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS|
+| Backend | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
+| Integrations | Travel Advisor API |
+
+## Installation
+
+1. `npm install`  
+    * @emotion/react
+    * @emotion/styled
+    * @mui/icons-material
+    * @mui/lab
+    * @mui/material
+    * @mui/styled-engine-sc
+    * @testing-library/jest-dom
+    * @testing-library/react
+    * @testing-library/user-event
+    * axios
+    * buffer
+    * date-fns
+    * jsonwebtoken
+    * msw
+    * react
+    * react-cookies
+    * react-dom
+    * react-error-overlay
+    * react-if
+    * react-router-dom
+    * react-scripts
+    * sass
+    * stream
+    * util
+    * web-vitals
+
+2. `npm start`
+
+*sample .env*
+``` 
+REACT_APP_SECRET=placeYourSecretHere
+
+REACT_APP_URL=placeHerokuURLHere
+```
 
 ## User Stories
 
@@ -90,11 +131,53 @@ Acceptance Tests:
 
 User should be able to click on Rubby Duck then it would take over the web page.
 
+## Wireframe
+
+*wireframe 1*
+![wireframe screenshot](assets/wireframe.png)
+
+*wireframe 2*
+![wireframe2 screenshot](assets/wireframe2.png)
+
 ## Software Requirements
 
-link to [software requirements](requirements.md) doc
+Check out our [software requirements](requirements.md) doc!
 
-## Resources Used
+## Resources and Contributions
 
-- _[Unsplash - Brett Jordan - Rubber Duck](https://images.unsplash.com/photo-1559715541-5daf8a0296d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cnViYmVyJTIwZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)_
-- _[Wikimedia Commons - LittleT889 - Floss(dance).gif](https://commons.wikimedia.org/wiki/File:Floss_(dance).gif)_
+### Sites
+
+* [light background](https://unsplash.com/photos/uuCjYxJVf4o)
+* [dark background](https://unsplash.com/photos/DjjaZybYx4I)
+* [dark homepage banner](https://unsplash.com/photos/MrWOCGKFVDg)
+* [light homepage banner](https://unsplash.com/photos/xB2XP29gn10)
+* [Unsplash](https://unsplash.com/)
+* [GitHub Projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
+* [Stack Overflow](stackoverflow.com)
+* [MDN Docs](https://developer.mozilla.org/en-US/)
+* [W3 Schools](https://www.w3schools.com/)
+* [Node JS Docs](https://nodejs.org/en/docs/)
+* [ReactJS](https://reactjs.org/)
+* [Material UI docs](https://mui.com/getting-started/usage/)
+* [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
+* [Medium](https://medium.com/)
+
+### Advisors
+
+- _[Jacob Knaack ](https://www.linkedin.com/in/jacobknaack/)_
+- _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
+- _[Alexander Williams](https://www.linkedin.com/in/alexander-williams2311/)_
+- _[Marie Marcos ](https://www.linkedin.com/in/marie-marcos/)_
+
+- And all the other TAs who helped us along the way
+
+## Deployed Site Links
+
+[Netlify](https://codebr.netlify.app/)  
+[Heroku](https://code-break-server.herokuapp.com)
+
+## Future Implementations
+
+* Integrate break reminder into React Native app so break reminder can notify user's phone if they step away from desktop
+* Create a mental reset component that leads user through a quick 30-60 second breathing exercise
+* Provide user song suggestions for coding workflow based on mood
