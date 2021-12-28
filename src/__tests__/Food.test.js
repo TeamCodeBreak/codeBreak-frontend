@@ -7,13 +7,11 @@ import {act} from 'react-dom/test-utils';
 import Food from '../components/food/Food';
 
 const server = setupServer(
-  
   rest.post(`${process.env.REACT_APP_URL}/food`, (req, res, ctx) => {
- 
     return res(
       ctx.json({
         data: [{
-          name: 'Waffle Window',
+          name: 'Harvey Cafe',
           address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
       }],
       })
@@ -35,13 +33,11 @@ it('Should send response when called upon food api and render data in Food Compo
   })
   await waitFor(()=>{
     screen.getByTestId('data');
-    screen.getByTestId('Waffle Window');
+    screen.getByTestId('Harvey Cafe');
     screen.getByTestId('4708 NW Bethany Blvd, Beaverton, OR 97229-9258');
   })
   expect(screen.getByTestId('data')).toBeInTheDocument();
-  expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
+  expect(screen.getByTestId('Harvey Cafe')).toBeInTheDocument();
   expect(screen.getByTestId('4708 NW Bethany Blvd, Beaverton, OR 97229-9258')).toBeInTheDocument();
-
 })
-
 })
