@@ -51,8 +51,7 @@ function Login(props) {
 
   return (
     <>
-      <When condition={!auth.isLoggedIn && !props.
-        showSignup}>
+      <When condition={!auth.isLoggedIn && !props.showSignup}>
         <div className={theme.mode}>
           <Container id="formContainer">
             <h2>Login</h2>
