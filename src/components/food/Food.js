@@ -32,6 +32,10 @@ export default function Food() {
     setData(filteredResponse);
   }
 
+  function clearResults() {
+    setData([]);
+  }
+
   return (
     <div
       style={{
@@ -68,6 +72,7 @@ export default function Food() {
 
               backgroundColor: 'lightBlue',
             }}
+            onClick={clearResults}
           >
             Clear
           </Button>
