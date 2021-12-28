@@ -18,12 +18,14 @@ export default function Notes() {
 
   useEffect(() => {
     getNotes();
+    console.log(auth.tokken)
   }, [auth.token]);
 
   useEffect(() => {
     if (auth.token) {
       getNotes();
     }
+    console.log(run)
   }, [run]);
 
   async function getNotes() {
