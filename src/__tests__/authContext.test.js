@@ -4,7 +4,7 @@ import AuthProvider, { AuthContext } from '../context/auth';
 import Login from '../components/login/Login';
 import ThemeProvider from '../context/theme';
 //use our mock service worker that mocks the auth api server
-import { server } from './mock/mockServer';
+import { server } from '../mock/mockServer';
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
