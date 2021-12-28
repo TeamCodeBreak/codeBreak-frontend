@@ -46,6 +46,17 @@ const server = setupServer(
     ];
 
     return res(ctx.json(response));
+  }),
+  rest.delete(`${process.env.REACT_APP_URL}/notes`, (req, res, ctx) => {
+    let response = [
+      {
+        notes: 'Roop Cafe 2',
+        id: 3,
+        user: 'harvey',
+      },
+    ];
+
+    return res(ctx.json(response));
   })
 );
 
