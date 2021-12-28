@@ -37,7 +37,7 @@ export default function Notes() {
 
     let sortData = data.sort((a, b) => {
       return a.id - b.id;
-    })
+    });
 
     console.log('sort', sortData);
     setNotes(response.data);
@@ -61,7 +61,6 @@ export default function Notes() {
     }
   }
   async function handleUpdateNote(e) {
-
     e.preventDefault();
     let config = {
       headers: {
@@ -72,15 +71,9 @@ export default function Notes() {
       notes: e.target.value,
     };
 
-    let response = await axios.put(
-      `${url}/notes/${e.target.id}`,
-      obj,
-      config
-    );
+    let response = await axios.put(`${url}/notes/${e.target.id}`, obj, config);
     setRun(!run);
     setUpdateValue('');
-
-
   }
 
   async function handleDelete(e) {
@@ -93,13 +86,16 @@ export default function Notes() {
 
     setRun(!run);
   }
+  console.log('NOTESPARENT---->', notes);
   return (
     <>
       <div className={theme.mode}>
         <div id="notesCont">
           <div id="notePadTitle">
             <h2>Write it out.</h2>
-            <TextField label="Enter your thoughts!" variant="outlined"
+            <TextField
+              label="Enter your thoughts!"
+              variant="outlined"
               className="input__notes"
               type="text"
               value={value}
@@ -107,10 +103,11 @@ export default function Notes() {
               onChange={e => setValue(e.target.value)}
             />
           </div>
-          <div className="notes__parent">
+          <div className="notes__parent" data-testid="notes">
             {notes[0] &&
               notes.map(note => (
                 <SingleNote
+                  data-testid={note}
                   note={note}
                   handleDelete={handleDelete}
                   handleUpdateNote={handleUpdateNote}
