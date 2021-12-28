@@ -11,24 +11,23 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
 import { Link } from '@mui/material';
-import { When } from "react-if";
+import { When } from 'react-if';
 import './login.scss';
 import Container from '@mui/material/Container';
 import { ThemeContext } from '../../context/theme';
 import { AuthContext } from '../../context/auth.js';
 
 function Login(props) {
-
   let auth = useContext(AuthContext);
   const theme = useContext(ThemeContext);
 
   const [values, setValues] = React.useState({
     username: '',
     password: '',
-    showPassword: false
+    showPassword: false,
   });
 
-  const handleChange = (value) => (event) => {
+  const handleChange = value => event => {
     setValues({ ...values, [value]: event.target.value });
   };
 
@@ -39,7 +38,7 @@ function Login(props) {
     });
   };
 
-  const handleMouseDownPassword = (event) => {
+  const handleMouseDownPassword = event => {
     event.preventDefault();
   };
 
@@ -51,64 +50,82 @@ function Login(props) {
 
   return (
     <>
-      <When condition={!auth.isLoggedIn && !props.
-        showSignup}>
-        <div className={theme.mode}>
-          <Container id="formContainer">
+      <When condition={!auth.isLoggedIn && !props.showSignup}>
+        <div data-testid='login' className={theme.mode}>
+          <Container id='formContainer'>
             <h2>Login</h2>
             <FormControl>
               <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
                 <div>
                   <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                    <FormControl id="usernameLogin" sx={{ m: 1, width: '25ch' }} variant="outlined">
-                      <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
+                    <FormControl
+                      id='usernameLogin'
+                      sx={{ m: 1, width: '25ch' }}
+                      variant='outlined'
+                    >
+                      <InputLabel htmlFor='outlined-adornment-username'>
+                        Username
+                      </InputLabel>
                       <OutlinedInput
-                        id="outlined-adornment-username"
+                        id='outlined-adornment-username'
                         type={values ? 'text' : 'username'}
                         value={values.username}
                         onChange={handleChange('username')}
                         endAdornment={
-                          <InputAdornment position="end">
-                            <AccountCircle sx={{ color: 'action.active', mr: -0.5, my: 0 }} />
+                          <InputAdornment position='end'>
+                            <AccountCircle
+                              sx={{ color: 'action.active', mr: -0.5, my: 0 }}
+                            />
                           </InputAdornment>
                         }
-                        label="Password"
+                        label='Password'
                       />
                     </FormControl>
                   </Box>
-                  <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                  <FormControl sx={{ m: 1, width: '25ch' }} variant='outlined'>
+                    <InputLabel htmlFor='outlined-adornment-password'>
+                      Password
+                    </InputLabel>
                     <OutlinedInput
-                      id="outlined-adornment-password"
+                      id='outlined-adornment-password'
                       type={values.showPassword ? 'text' : 'password'}
                       value={values.password}
                       onChange={handleChange('password')}
                       endAdornment={
-                        <InputAdornment position="end">
+                        <InputAdornment position='end'>
                           <IconButton
-                            aria-label="toggle password visibility"
+                            aria-label='toggle password visibility'
                             onClick={handleClickShowPassword}
                             onMouseDown={handleMouseDownPassword}
-                            edge="end"
+                            edge='end'
                           >
-                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                            {values.showPassword ? (
+                              <VisibilityOff />
+                            ) : (
+                              <Visibility />
+                            )}
                           </IconButton>
                         </InputAdornment>
                       }
-                      label="Password"
+                      label='Password'
                     />
                   </FormControl>
                 </div>
               </Box>
-              <Box id="buttonCont">
+              <Box id='buttonCont'>
                 <Link
-                  id="createAccount"
+                  id='createAccount'
                   onClick={() => {
                     props.setShowSignup(true);
-                  }}>
+                  }}
+                >
                   create an account
                 </Link>
-                <Button id="loginButton" variant="contained" onClick={handleSubmit}>
+                <Button
+                  id='loginButton'
+                  variant='contained'
+                  onClick={handleSubmit}
+                >
                   Login
                 </Button>
                 {/* <When condition={values.password}>
