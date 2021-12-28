@@ -81,6 +81,7 @@ describe('Testing the Notes Component', () => {
     expect(screen.getByTestId('notes')).toBeInTheDocument();
     expect(screen.getByTestId('Harvey Cafe')).toBeInTheDocument();
   });
+
   it('Should perform a DELETE on a note', () => {
     act(async () => {
       render(
@@ -95,6 +96,7 @@ describe('Testing the Notes Component', () => {
       expect(button.onclick).toHaveBeenCalled();
     });
   });
+
   it('Should POST a new note', () => {
     act(async () => {
       render(
@@ -112,6 +114,7 @@ describe('Testing the Notes Component', () => {
       expect(screen.getByTestId('Roop Cafe 2')).toBeInTheDocument();
     });
   });
+
   it('Should PUT an updated note', () => {
     act(async () => {
       render(
