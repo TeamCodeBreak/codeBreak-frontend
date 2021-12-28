@@ -99,6 +99,7 @@ export default function Notes() {
               value={value}
               onKeyPress={handleAddNote}
               onChange={e => setValue(e.target.value)}
+              data-testid="input"
             />
           </div>
           <div className="notes__parent" data-testid="notes">

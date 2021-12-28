@@ -91,8 +91,25 @@ describe('Testing the Notes Component', () => {
         </AuthProvider>
       );
       const button = screen.getByTestId('delete-button');
-      await fireEvent.submit(button);
+      fireEvent.submit(button);
       expect(button.onclick).toHaveBeenCalled();
+    });
+  });
+  it('Should POST a new note', () => {
+    act(async () => {
+      render(
+        <AuthProvider>
+          <ThemeProvider>
+            <Notes />
+          </ThemeProvider>
+        </AuthProvider>
+      );
+      const input = screen.getByTestId('input');
+      fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
+      await waitFor(() => {
+        screen.getByTestId('Roop Cafe');
+      });
+      expect(screen.getByTestId('Roop Cafe')).toBeInTheDocument();
     });
   });
 });
