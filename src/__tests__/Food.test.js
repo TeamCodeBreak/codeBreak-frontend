@@ -16,7 +16,6 @@ const server = setupServer(
           name: 'Waffle Window',
           address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
       }],
-        // address: '4708 NW Bethany Blvd, Beaverton, OR 97229-9258',
       })
     )
   })

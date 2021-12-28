@@ -75,7 +75,7 @@ export default function Food() {
                     <Typography gutterBottom variant="h5" data-testid= {foodPlace.name} component="div">
                       {foodPlace.name}
                     </Typography>
-                    <Typography variant="body2" data-testid="address"color="text.secondary">
+                    <Typography variant="body2" data-testid={foodPlace.address}color="text.secondary">
                       {foodPlace.address}
                     </Typography>
                   </CardContent>
