@@ -20,6 +20,7 @@ function Header(props) {
     },
     light: {
       color: '#4B575D',
+      background: 'rgb(244, 244, 244)',
     },
     common: {
       transition: 'all 1s ease',
