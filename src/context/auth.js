@@ -68,18 +68,17 @@ function AuthProvider({ children }) {
   }
 
   function setLogInState(boolean, token, user) {
-    cookie.save('auth', user?.token);
     setUser(user);
-    setLoggedIn(boolean);
     setToken(token);
+    cookie.save('auth', token);
+    setLoggedIn(boolean);
   }
 
   useEffect(() => {
     try {
       const qs = new URLSearchParams(window.location.search);
       const cookieToken = cookie.load('auth');
-      const token = qs.get('token');
-      cookie.save('auth', token || cookieToken || null);
+      const token = qs.get('token') || cookieToken || null;
       validateToken(token);
     } catch (e) {
       console.log('useEffect Context Auth error', e);
