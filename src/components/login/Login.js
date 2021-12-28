@@ -51,8 +51,7 @@ function Login(props) {
 
   return (
     <>
-      <When condition={!auth.isLoggedIn && !props.
-        showSignup}>
+      <When condition={!auth.isLoggedIn && !props.showSignup}>
         <div className={theme.mode}>
           <Container id="formContainer">
             <h2>Login</h2>
@@ -63,7 +62,9 @@ function Login(props) {
                     <FormControl id="usernameLogin" sx={{ m: 1, width: '25ch' }} variant="outlined">
                       <InputLabel htmlFor="outlined-adornment-username">Username</InputLabel>
                       <OutlinedInput
-                        data-testid="username-field"
+                        inputProps={{
+                          'data-testid': 'username-field'
+                        }}
                         id="outlined-adornment-username"
                         type={values ? 'text' : 'username'}
                         value={values.username}
@@ -80,7 +81,9 @@ function Login(props) {
                   <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
-                      data-testid="password-field"
+                      inputProps={{
+                        'data-testid': 'password-field'
+                      }}
                       id="outlined-adornment-password"
                       type={values.showPassword ? 'text' : 'password'}
                       value={values.password}
