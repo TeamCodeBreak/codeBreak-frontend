@@ -9,7 +9,7 @@
 
 ## About
 
-`code<br>` is an application dashboard for developers that provides break reminders, food suggestions, a notepad for thoughts/insights/reminders, and a rubby ducky programming companion. This app is integrated with basic and bearer auth login for additional security and includes an extensive test suite.
+`code<br>` is an application dashboard for developers that provides break reminders, food suggestions, a notepad for thoughts/insights/reminders, and a rubber ducky programming companion. This app is integrated with basic and bearer auth login for additional security and includes an extensive test suite.
 
 ## Our Mission
 
@@ -121,7 +121,7 @@ User should be able to start and stop the time.
 
 ### Rubber Duck
 
-As a user, I want to have a one way conversation with Rubby Duck.
+As a user, I want to have a one way conversation with Rubber Duck.
 
 Feature Tasks:
 
@@ -129,7 +129,7 @@ Add ruby duck animation.
 
 Acceptance Tests:
 
-User should be able to click on Rubby Duck then it would take over the web page.
+User should be able to click on Rubber Duck rendering it to the web page.
 
 ## Wireframe
 
