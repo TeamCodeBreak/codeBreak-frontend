@@ -25,6 +25,7 @@ export default function SingleNote(props) {
           className="note__delete"
           onClick={props.handleDelete}
           id={props.note.id}
+          data-testid="delete-button"
         >
           x
         </button>

@@ -81,4 +81,18 @@ describe('Testing the Notes Component', () => {
     expect(screen.getByTestId('notes')).toBeInTheDocument();
     expect(screen.getByTestId('Harvey Cafe')).toBeInTheDocument();
   });
+  it('Should perform a DELETE on a note', () => {
+    act(async () => {
+      render(
+        <AuthProvider>
+          <ThemeProvider>
+            <Notes />
+          </ThemeProvider>
+        </AuthProvider>
+      );
+      const button = screen.getByTestId('delete-button');
+      await fireEvent.submit(button);
+      expect(button.onclick).toHaveBeenCalled();
+    });
+  });
 });
