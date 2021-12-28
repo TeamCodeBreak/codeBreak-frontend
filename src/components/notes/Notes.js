@@ -34,13 +34,12 @@ export default function Notes() {
     };
     let response = await axios.get(`${url}/notes`, config);
     let data = response.data;
-
     let sortData = data.sort((a, b) => {
       return a.id - b.id;
     });
 
     console.log('sort', sortData);
-    setNotes(response.data);
+    setNotes(data);
   }
 
   async function handleAddNote(e) {
@@ -86,7 +85,6 @@ export default function Notes() {
 
     setRun(!run);
   }
-  console.log('NOTESPARENT---->', notes);
   return (
     <>
       <div className={theme.mode}>

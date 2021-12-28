@@ -13,7 +13,12 @@ export default function SingleNote(props) {
   }
 
   return (
-    <Paper elevation={3} className="note" key={props.note.id}>
+    <Paper
+      elevation={3}
+      className="note"
+      key={props.note.id}
+      data-testid={props.note.notes}
+    >
       <div className="note__text">
         {props.note.notes}
         <button
