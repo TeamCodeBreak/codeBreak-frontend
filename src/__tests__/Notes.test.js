@@ -2,7 +2,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-// import { act } from 'react-dom/test-utils';
+import { act } from 'react-dom/test-utils';
 import ThemeProvider from '../context/theme';
 import AuthProvider from '../context/auth';
 
@@ -24,6 +24,17 @@ const server = setupServer(
     ];
 
     return res(ctx.json(response));
+  }),
+  rest.post(`${process.env.REACT_APP_URL}/notes`, (req, res, ctx) => {
+    let response = [
+      {
+        notes: 'Roop Cafe',
+        id: 3,
+        user: 'harvey',
+      },
+    ];
+
+    return res(ctx.json(response));
   })
 );
 
@@ -32,7 +43,7 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 describe('Testing the Notes Component', () => {
-  it('Should update a note', async () => {
+  it('Should perform a GET and render a note', async () => {
     render(
       <AuthProvider>
         <ThemeProvider>
