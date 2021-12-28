@@ -35,10 +35,13 @@ it('Should send response when called upon food api', async()=>{
   })
   await waitFor(()=>{
     screen.getByTestId('data');
-    screen.getAllByTestId('Waffle Window')
+    screen.getByTestId('Waffle Window');
+    screen.getByTestId('4708 NW Bethany Blvd, Beaverton, OR 97229-9258');
   })
   expect(screen.getByTestId('data')).toBeInTheDocument();
   expect(screen.getByTestId('Waffle Window')).toBeInTheDocument();
+  expect(screen.getByTestId('4708 NW Bethany Blvd, Beaverton, OR 97229-9258')).toBeInTheDocument();
+
 
 
 })
