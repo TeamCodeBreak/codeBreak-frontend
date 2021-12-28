@@ -72,7 +72,9 @@ export default function Notes() {
       notes: e.target.value,
     };
 
+
     await axios.put(`${url}/notes/${e.target.id}`, obj, config);
+
     setRun(!run);
     setUpdateValue('');
   }
@@ -83,7 +85,8 @@ export default function Notes() {
         Authorization: `Bearer ${auth.token}`,
       },
     };
-    await axios.delete(`${url}/notes/${e.target.id}`, config);
+
+   await axios.delete(`${url}/notes/${e.target.id}`, config);
 
     setRun(!run);
   }
