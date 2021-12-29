@@ -8,7 +8,6 @@ import Login from './components/login/Login';
 import Container from '@mui/material/Container';
 import Home from './components/home/Home';
 import { AuthContext } from './context/auth';
-import AboutUs from './components/about-us/AboutUs';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import lightLogo from './assets/codebrLogoLightHome.png';
@@ -69,7 +68,6 @@ function App() {
               )
             }
           />
-          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
         <Footer />
       </Router>
