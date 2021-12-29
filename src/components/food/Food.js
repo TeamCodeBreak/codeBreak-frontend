@@ -1,80 +1,128 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
+import './food.scss';
+import { ThemeContext } from '../../context/theme';
 import {
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
-  CardMedia,
   TextField,
   Typography,
 } from '@mui/material';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
 
 const REACT_APP_URL = process.env.REACT_APP_URL;
+
 export default function Food() {
-  const [formData, setFormData] = useState();
-  const [data,setData] = useState();
+  const theme = useContext(ThemeContext);
+  const [formData, setFormData] = useState({ postalcode: null, cuisine: '' });
+  const [data, setData] = useState();
 
   async function findRestaurant(e) {
     e.preventDefault();
-    let obj={
-      postalcode: formData,
-    }
-    let response = await axios.post(`${REACT_APP_URL}/food`,obj)
-    console.log('workinh')
-    console.log(response.data.data);
-    setData(response.data.data);
+    let obj = {
+      postalcode: formData.postalcode,
+      cuisine: formData.cuisine,
+    };
+    let response = await axios.post(`${REACT_APP_URL}/food`, obj);
+    setData(response.data);
   }
-  console.log(formData);
+
+  function clearResults() {
+    setData([]);
+  }
   return (
-    <div style={{display:'flex',
-        justifyContent: 'flex-end'}}>
-    <div>
-      <form onSubmit={findRestaurant}>
-        <TextField
-          onChange={e => setFormData( e.target.value)}  
-          name="zipcode"
-          required
-          id="outlined-required"
-          label="zipcode"
-        />
-        <Button
-          variant="contained"
-          style={{
-            width: 'auto',
-            height:'3.4rem',
-            backgroundColor:'lightBlue'
-          }}
-          type="submit"
-        >
-          Find
-        </Button>
-      </form>
-      {data && data.map((foodPlace,idx)=>(
-        
-     
-     
-             <div
-            key={idx}
-            style={{ margin: '3rem', position: 'relative', zIndex: '100' }}
+    <div className={theme.mode}>
+      <div>
+        <div data-testid="data" id="data">
+          <form
+            onSubmit={findRestaurant}
+            id="zipCodeForm"
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              width: '380px',
+            }}
           >
-            <Card style={{ width: 350, background: 'lightBlue', color:'white' }}>
-              <CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {foodPlace.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {foodPlace.address}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-             
-            </Card>
-          </div>
-           ))}
-    </div>
+            <TextField
+              style={{
+                margin: '1%',
+              }}
+              onChange={e =>
+                setFormData({ ...formData, postalcode: e.target.value })
+              }
+              name="ZIP C"
+              required
+              id="outlined-required"
+              label="ZIP Code"
+              InputProps={{
+                endAdornment: <LocalDiningIcon position="end" />,
+              }}
+            />
+            <TextField
+              style={{
+                margin: '1%',
+              }}
+              onChange={e =>
+                setFormData({ ...formData, cuisine: e.target.value })
+              }
+              name="Cuisine"
+              required
+              id="outlined-required"
+              label="Cuisine"
+              InputProps={{
+                endAdornment: <LocalDiningIcon position="end" />,
+              }}
+            />
+            <Button
+              variant="contained"
+              id="findButton"
+              type="submit"
+              data-testid="find-button"
+            >
+              Find
+            </Button>
+            <Button variant="contained" id="clearButton" onClick={clearResults}>
+              Clear
+            </Button>
+          </form>
+          {data &&
+            data.map((foodPlace, idx) => (
+              <div id="foodData" key={idx}>
+                <Card id="restCard">
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        data-testid={foodPlace.name}
+                        component="div"
+                      >
+                        {foodPlace.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        data-testid={foodPlace.location.address1}
+                        color="text.secondary"
+                      >
+                        {foodPlace.location.address1}
+                      </Typography>
+                      <a
+                        id="restCardURL"
+                        href={foodPlace.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        More Info
+                      </a>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

@@ -5,10 +5,8 @@ import jwt from 'jsonwebtoken';
 
 export const AuthContext = React.createContext();
 
-
 const SECRET = process.env.REACT_APP_SECRET || 'secretlol';
 const DATABASE_URL = process.env.REACT_APP_URL;
-
 
 function AuthProvider({ children }) {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -27,7 +25,6 @@ function AuthProvider({ children }) {
   };
 
   function isAuthorized(capability) {
-    // check user capabilities and return a boolean
     return user?.capabilities?.includes(capability);
   }
 
@@ -37,11 +34,14 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let response = await axios.post(`${DATABASE_URL}/signin`, {}, {
-        auth: {
-          username,
-          password,
-         }
+      let response = await axios.post(
+        `${DATABASE_URL}/signin`,
+        {},
+        {
+          auth: {
+            username,
+            password,
+          },
         }
       );
       const token = jwt.sign(response.data.user, SECRET);
@@ -57,7 +57,7 @@ function AuthProvider({ children }) {
       setLogInState(true, token, user);
     } catch (e) {
       setLogInState(false, null, {});
-      console.log('Error validating token:', e);
+      // throw new Error(e);
     }
   }
 
@@ -68,18 +68,17 @@ function AuthProvider({ children }) {
   }
 
   function setLogInState(boolean, token, user) {
-    cookie.save('auth', user?.token);
     setUser(user);
-    setLoggedIn(boolean);
     setToken(token);
+    cookie.save('auth', token);
+    setLoggedIn(boolean);
   }
 
   useEffect(() => {
     try {
       const qs = new URLSearchParams(window.location.search);
       const cookieToken = cookie.load('auth');
-      const token = qs.get('token');
-      cookie.save('auth', token || cookieToken || null);
+      const token = qs.get('token') || cookieToken || null;
       validateToken(token);
     } catch (e) {
       console.log('useEffect Context Auth error', e);
@@ -92,11 +91,14 @@ function AuthProvider({ children }) {
     }
 
     try {
-      let res = await axios.post(`${DATABASE_URL}/signup`, { username, password, role: 'admin' });
+      let res = await axios.post(`${DATABASE_URL}/signup`, {
+        username,
+        password,
+        role: 'admin',
+      });
       const token = jwt.sign(res.data.user, SECRET);
       validateToken(token);
-    } catch (err) {
-      console.log('error signing in', err);
+    } catch (e) {
       return false;
     }
   }

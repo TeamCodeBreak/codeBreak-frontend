@@ -1,31 +1,76 @@
 import './App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
-// import SignUp from './components/sign-up/Sign-Up.js';
-import SignUp2 from './components/sign-up/SignUp2.js';
-// import Login from './components/login/Login.js';
-import Login2 from './components/login/Login2';
-import RubberDucky from './components/rubber-ducky/RubberDucky';
-import BreakReminder from './components/break-reminder/BreakReminder.js';
-import Notes from './components/notes/Notes.js';
-import Food from './components/food/Food.js'
+import Button from '@mui/material/Button';
+import SignUp from './components/sign-up/SignUp.js';
+import Login from './components/login/Login';
+import Container from '@mui/material/Container';
+import Home from './components/home/Home';
+import { AuthContext } from './context/auth';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import "bootstrap/scss/bootstrap";
+import lightLogo from './assets/codebrLogoLightHome.png';
+import darkLogo from './assets/codebrLogoDarkHome.png';
+import React, { useContext } from 'react';
+import { ThemeContext } from './context/theme';
 
 function App() {
+  let auth = useContext(AuthContext);
+  const theme = useContext(ThemeContext);
+
+  const [showSignup, setShowSignup] = React.useState(false);
+  const [enterSite, setEnter] = React.useState(false);
+
   return (
-    <div className="App">
-      <Header />
-      <p>hello world</p>
-      <SignUp2 />
-      <Login2 />
-      <div style={{display:'flex', flexDirection:'row',justifyContent:'space-evenly', marginTop:'3rem'}}><Notes />
-      <BreakReminder />
-      <Food />
-      <RubberDucky />
-      </div>
-      <Footer />
+    <div className={theme.mode}>
+      <Router>
+        <Header
+          showSignup={showSignup}
+          setShowSignup={setShowSignup}
+          setEnter={setEnter}
+        />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              auth.isLoggedIn ? (
+                <Home
+                  id="home"
+                  showSignup={showSignup}
+                  setShowSignup={setShowSignup}
+                />
+              ) : enterSite ? (
+                <>
+                  <Login
+                    showSignup={showSignup}
+                    setShowSignup={setShowSignup}
+                  />
+                  <SignUp showSignup={showSignup} />
+                </>
+              ) : (
+                <Container id="loginPage">
+                  {theme.mode === 'light' ? (
+                    <img src={darkLogo} alt="logo" />
+                  ) : (
+                    <img src={lightLogo} alt="logo" />
+                  )}
+                  <Button
+                    variant="contained"
+                    id="homeButton"
+                    onClick={() => setEnter(true)}
+                    data-testid="enter"
+                  >
+                    enter
+                  </Button>
+                </Container>
+              )
+            }
+          />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }

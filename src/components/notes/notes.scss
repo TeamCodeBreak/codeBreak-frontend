@@ -1,63 +1,167 @@
-
-input{
+input {
   outline: none;
   resize: none;
 }
 
 
-.notes__parent{
-display:flex;
-flex-direction: column;
+.light{
+  #notesCont{
+    background-color: rgb(244, 244, 244);
+    transition: all 1s ease;
+  }
+  .note {
+    box-shadow: 2px 2px 3px lightgrey;
+    transition: all 1s ease;
+  }
+  .note_editbox {
+    color:#424951;
+    background-color: #cbd8ea;
+    transition: all 1s ease;
+  }
+  .note__delete {
+    color: #121212;
+    background-color: #cbd8ea;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .note__delete:hover {
+    color: black;
+    cursor: pointer;
+  }
+
+  #notePadTitle{
+    background-color: rgb(209, 209, 209);
+    box-shadow: 6px 6px 6px #a7a6a6;
+    transition: all 1s ease;
+
+    h2{
+      color: #8a9593;
+      margin-bottom: 6%;
+    }
+  }
+
+  #singleNotepad{
+    background: #cbd8ea;
+  }
+
+  #notePadTitleCont{
+    background-color: rgb(244, 244, 244);
+    transition: all 1s ease;
+  }
 }
 
+.dark{
+  #notesCont{
+    background-color: rgb(20, 20, 20);
+    transition: all 1s ease;
+  }
+
+  .note {
+    box-shadow: 2px 2px 3px lightgrey;
+    transition: all 1s ease;
+  }
+
+  .note_editbox {
+    color:#424951;
+    background-color: #beb8ae;
+    transition: all 1s ease;
+  }
+
+  .note__delete {
+    color: #565f60;
+    background-color: #beb8ae;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .note__delete:hover {
+    color: black;
+    cursor: pointer;
+  }
+
+  #notePadTitle{
+    background-color: #829BA7;
+    box-shadow: 6px 6px 6px #4e4e4e;
+    transition: all 1s ease;
+
+    h2{
+      color: #cad6d4;
+      margin-bottom: 6%;
+    }
+  }
+
+  #singleNotepad{
+    background: #beb8ae;
+  }
+
+  #notePadTitleCont{
+    background-color: rgb(20, 20, 20);
+    transition: all 1s ease;
+  }
+
+}
 .note {
-  font-family: "Permanent Marker", cursive;
   width: 200px;
   height: 200px;
   margin: 10px;
-  background-color: lightyellow;
-  border: 1px solid grey;
-  box-shadow: 2px 2px 3px lightgrey;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-
 .note__text {
-  font-family: "Permanent Marker", cursive;
   width: 100%;
   padding: 8px 14px;
   background: transparent;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 800pt;
+  font-family: 'Waiting for the Sunrise', cursive;
 }
-
-
-
 
 .note__delete {
   position: absolute;
   top: 0px;
   right: 0px;
-  font-size: 20px;
-  color: red;
+  font-size: 25px;
   padding: 5px;
-  border:none;
-  background-color: lightyellow;
+  border: none;
 }
 
-.note__delete:hover {
-  color: black;
-  cursor: pointer;
-}
-
-.note_editbox{
+.note_editbox {
   position: absolute;
- border:none;
- width:100%;
- bottom: 0px;
- background-color: lightyellow;
- border-radius: 5px;
+  border: none;
+  width: 100%;
+  bottom: 0px;
+  font-size: 20px;
+}
+
+.input__notes {
+  border: none;
+  margin: 10px;
+}
+
+#notePadTitleCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#notePadTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:8%;
+  border-radius: 8px;
+  height:200px;
+  width:400px;
+}
+
+.notes__parent{
+  margin-top: 6%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
