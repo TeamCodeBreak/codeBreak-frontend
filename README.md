@@ -53,11 +53,11 @@ If you're a developer, you can probably relate to this. Forgetting to take break
 
 ## Project Overview
 
-| Title        | Languages / Frameworks / Libraries / Tools                                                                                |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| Frontend     | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS                                                         |
-| Backend      | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
-| Integrations | Yelp API                                                                                                                  |
+| Title        | Languages / Frameworks / Libraries / Tools                                                                      |
+| ------------ | --------------------------------------------------------------------------------------------------------------- |
+| Frontend     | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS                                               |
+| Backend      | Node.js, Express, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
+| Integrations | Yelp API                                                                                                        |
 
 ## Installation
 
