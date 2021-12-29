@@ -3,7 +3,37 @@
 </div>
 <h1 align="center">The dev mind you've been waiting for...</h1> 
 
-## Authors: Marquesa Asmussen, Christopher Burk, Sarah Creager, Roop Hayer, Harvey Lucas
+<h2 align="center">Meet the Creators</h2> 
+
+<h3 align="center">Marquesa Asmussen</h3> 
+<div align="center">
+<a href="https://www.linkedin.com/in/marquesaa/"><img height="40" src="./assets/linkedInIcon.png"></a>
+<a href="https://github.com/MarquesaAsmussen"><img height="40" src="./assets/githubIcon.png"></a>
+</div>
+
+<h3 align="center">Christopher Burk</h3> 
+<div align="center">
+<a href="https://www.linkedin.com/in/christopherburk/"><img height="40" src="./assets/linkedInIcon.png"></a>
+<a href="https://github.com/cburk2019"><img height="40" src="./assets/githubIcon.png"></a>
+</div>
+
+<h3 align="center">Sarah Creager</h3> 
+<div align="center">
+<a href="https://www.linkedin.com/in/sarah-creager/"><img height="40" src="./assets/linkedInIcon.png"></a>
+<a href="https://github.com/SarahCreager"><img height="40" src="./assets/githubIcon.png"></a>
+</div>
+
+<h3 align="center">Roop Hayer</h3> 
+<div align="center">
+<a href="https://www.linkedin.com/in/roophayer/"><img height="40" src="./assets/linkedInIcon.png"></a>
+<a href="https://github.com/RoopHayer"><img height="40" src="./assets/githubIcon.png"></a>
+</div>
+
+<h3 align="center">Harvey Lucas</h3> 
+<div align="center">
+<a href="https://www.linkedin.com/in/harvey-lucas-iii/"><img height="40" src="./assets/linkedInIcon.png"></a>
+<a href="https://github.com/tripppdx"><img height="40" src="./assets/githubIcon.png"></a>
+</div>
 
 ## Version: 1.0.0
 
