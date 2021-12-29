@@ -42,8 +42,10 @@ function RubberDucky() {
                 ideas and curiosities.
               </p>
               <p>
-                My job is to lend you a listening ear as you build, debug, and
-                reconstruct.
+                My job is to lend a listening ear as you build and debug.
+              </p>
+              <p>
+                CLICK ME to begin.
               </p>
             </PopoverBody>
           </Popover>
