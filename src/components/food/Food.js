@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Button, Card, CardActionArea, CardContent, TextField, Typography } from '@mui/material';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
 
 const REACT_APP_URL = process.env.REACT_APP_URL;
+
 export default function Food() {
   const [formData, setFormData] = useState();
   const [data, setData] = useState();
@@ -37,31 +32,31 @@ export default function Food() {
   }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-      }}
-    >
+    <div style={{
+      display: 'flex',
+      justifyContent: 'flex-end',
+    }}>
       <div data-testid="data">
         <form onSubmit={findRestaurant}>
           <TextField
             onChange={e => setFormData(e.target.value)}
-            name="zipcode"
+            name="ZIP Code"
             required
             id="outlined-required"
-            label="zipcode"
+            label="ZIP Code"
+            InputProps={{
+              endAdornment: (
+                <LocalDiningIcon position="end" />
+              ),
+            }}
           />
           <Button
             variant="contained"
             style={{
               width: 'auto',
               height: '3.4rem',
-
               backgroundColor: 'lightBlue',
-            }}
-            type="submit"
-          >
+            }} type="submit">
             Find
           </Button>
           <Button
@@ -69,23 +64,15 @@ export default function Food() {
             style={{
               width: 'auto',
               height: '3.4rem',
-
               backgroundColor: 'lightBlue',
-            }}
-            onClick={clearResults}
-          >
+            }} onClick={clearResults}>
             Clear
           </Button>
         </form>
         {data &&
           data.map((foodPlace, idx) => (
-            <div
-              key={idx}
-              style={{ margin: '3rem', position: 'relative', zIndex: '100' }}
-            >
-              <Card
-                style={{ width: 350, background: 'lightBlue', color: 'white' }}
-              >
+            <div key={idx} style={{ margin: '3rem', position: 'relative', zIndex: '100' }}>
+              <Card style={{ width: 350, background: 'lightBlue', color: 'white' }}>
                 <CardActionArea>
                   <CardContent>
                     <Typography
