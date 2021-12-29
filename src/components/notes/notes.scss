@@ -7,13 +7,16 @@ input {
 .light{
   #notesCont{
     background-color: rgb(244, 244, 244);
+    transition: all 1s ease;
   }
   .note {
     box-shadow: 2px 2px 3px lightgrey;
+    transition: all 1s ease;
   }
   .note_editbox {
     color:#424951;
     background-color: #cbd8ea;
+    transition: all 1s ease;
   }
   .note__delete {
     color: #121212;
@@ -29,6 +32,7 @@ input {
   #notePadTitle{
     background-color: rgb(209, 209, 209);
     box-shadow: 6px 6px 6px #a7a6a6;
+    transition: all 1s ease;
 
     h2{
       color: #8a9593;
@@ -42,21 +46,25 @@ input {
 
   #notePadTitleCont{
     background-color: rgb(244, 244, 244);
+    transition: all 1s ease;
   }
 }
 
 .dark{
   #notesCont{
     background-color: rgb(20, 20, 20);
+    transition: all 1s ease;
   }
 
   .note {
     box-shadow: 2px 2px 3px lightgrey;
+    transition: all 1s ease;
   }
 
   .note_editbox {
     color:#424951;
     background-color: #beb8ae;
+    transition: all 1s ease;
   }
 
   .note__delete {
@@ -73,6 +81,7 @@ input {
   #notePadTitle{
     background-color: #829BA7;
     box-shadow: 6px 6px 6px #4e4e4e;
+    transition: all 1s ease;
 
     h2{
       color: #cad6d4;
@@ -86,6 +95,7 @@ input {
 
   #notePadTitleCont{
     background-color: rgb(20, 20, 20);
+    transition: all 1s ease;
   }
 
 }
@@ -134,7 +144,6 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: red;
 }
 
 #notePadTitle{
