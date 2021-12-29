@@ -17,6 +17,7 @@ function Header(props) {
   const headerStyle = {
     dark: {
       color: '#99adb0',
+      background:'#141414'
     },
     light: {
       color: '#4B575D',

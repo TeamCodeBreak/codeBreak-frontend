@@ -2,6 +2,7 @@
   #homeCont {
     background: rgb(20, 20, 20);
     height: 1920px;
+    transition: all 1s ease;
   }
 
   #hungryButton {
@@ -16,6 +17,7 @@
     font-size: 30px;
     transition: all 0.6s ease-in-out;
     box-shadow: 6px 6px 6px #656565;
+    transition: all 1s ease;
   }
 
   #hungryButton:hover {
@@ -41,6 +43,7 @@
   #homeCont {
     background: rgb(244, 244, 244);
     height: 1920px;
+    transition: all 1s ease;
   }
 
   #hungryButton {
