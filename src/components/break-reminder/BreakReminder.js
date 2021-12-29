@@ -87,14 +87,10 @@ export default function BreakReminder() {
               <span className="second">{second}</span>
             </div>
             <Stack spacing={2} direction="row">
-              <When condition={counter > 0}> {/*may not want to have this conditionally rendered */}
                 <Button variant="contained" data-testid="start/pauseButton" id="startTimer" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
-              </When>
-              <When condition={counter > 0}>
                 <Button 
                 data-testid="resetButton"
                 variant="contained" id="resetTimer" onClick={stopTimer}>Reset</Button>
-              </When>
             </Stack>
           </FormControl>
           <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
