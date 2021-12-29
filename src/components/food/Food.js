@@ -75,7 +75,12 @@ export default function Food() {
                 endAdornment: <LocalDiningIcon position="end" />,
               }}
             />
-            <Button variant="contained" id="findButton" type="submit">
+            <Button
+              variant="contained"
+              id="findButton"
+              type="submit"
+              data-testid="find-button"
+            >
               Find
             </Button>
             <Button variant="contained" id="clearButton" onClick={clearResults}>
