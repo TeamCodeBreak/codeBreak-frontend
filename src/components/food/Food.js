@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
+import './food.scss';
+import { ThemeContext } from '../../context/theme';
 import {
   Button,
   Card,
@@ -9,8 +11,10 @@ import {
   Typography,
 } from '@mui/material';
 
+
 const REACT_APP_URL = process.env.REACT_APP_URL;
 export default function Food() {
+  const theme = useContext(ThemeContext);
   const [formData, setFormData] = useState();
   const [data, setData] = useState();
 
@@ -37,77 +41,73 @@ export default function Food() {
   }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-      }}
-    >
-      <div data-testid="data">
-        <form onSubmit={findRestaurant}>
-          <TextField
-            onChange={e => setFormData(e.target.value)}
-            name="zipcode"
-            required
-            id="outlined-required"
-            label="zipcode"
-          />
-          <Button
-            variant="contained"
+    <div className={theme.mode}>
+      <div>
+        <div data-testid="data" id="data">
+          <form onSubmit={findRestaurant}
+            id="zipCodeForm"
             style={{
-              width: 'auto',
-              height: '3.4rem',
-
-              backgroundColor: 'lightBlue',
-            }}
-            type="submit"
-          >
-            Find
-          </Button>
-          <Button
-            variant="contained"
-            style={{
-              width: 'auto',
-              height: '3.4rem',
-
-              backgroundColor: 'lightBlue',
-            }}
-            onClick={clearResults}
-          >
-            Clear
-          </Button>
-        </form>
-        {data &&
-          data.map((foodPlace, idx) => (
-            <div
-              key={idx}
-              style={{ margin: '3rem', position: 'relative', zIndex: '100' }}
+              display: 'flex',
+              justifyContent: 'flex-end',
+              width: '300px',
+            }}>
+            <TextField
+              style={{
+                margin: '1%',
+              }}
+              onChange={e => setFormData(e.target.value)}
+              name="zipcode"
+              required
+              id="outlined-required"
+              label="zipcode"
+            />
+            <Button
+              variant="contained"
+              id="findButton"
+              type="submit"
             >
-              <Card
-                style={{ width: 350, background: 'lightBlue', color: 'white' }}
+              Find
+            </Button>
+            <Button
+              variant="contained"
+              id="clearButton"
+              onClick={clearResults}
+            >
+              Clear
+            </Button>
+          </form>
+          {data &&
+            data.map((foodPlace, idx) => (
+              <div
+                id="foodData"
+                key={idx}
               >
-                <CardActionArea>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      data-testid={foodPlace.name}
-                      component="div"
-                    >
-                      {foodPlace.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      data-testid={foodPlace.address}
-                      color="text.secondary"
-                    >
-                      {foodPlace.address}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </div>
-          ))}
+                <Card
+                  id="restCard"
+                >
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        data-testid={foodPlace.name}
+                        component="div"
+                      >
+                        {foodPlace.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        data-testid={foodPlace.address}
+                        color="text.secondary"
+                      >
+                        {foodPlace.address}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
