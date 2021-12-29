@@ -2,7 +2,8 @@ import RubberDucky from '../rubber-ducky/RubberDucky';
 import BreakReminder from '../break-reminder/BreakReminder';
 import Notes from '../notes/Notes.js';
 import Food from '../food/Food.js';
-import banner from '../../assets/bannerDark.png'
+import bannerDark from '../../assets/bannerDark.png'
+import bannerLight from '../../assets/bannerLight.png'
 import Button from '@mui/material/Button';
 import { ThemeContext } from '../../context/theme';
 import React, { useContext, useState } from 'react';
@@ -16,20 +17,24 @@ function Home(props) {
   return (
     <div className={theme.mode}>
       <div id="homeCont">
-        <img id="banner" src={banner} alt="banner" />
+        {theme.mode === 'light' ?
+          <img id="banner" src={bannerLight} alt="banner" />
+          : <img id="banner" src={bannerDark} alt="banner" />}
         <div className="home">
-          {hungry ?
-            <Food />
-            : <Button
-              id="hungryButton"
-              variant="contained"
-              onClick={() => setHungry(true)}>
-              Hungry?
-            </Button>}
-          <BreakReminder />
-        </div>
-        <div id="notesCont">
-          <Notes />
+          <div id="break-hungry-cont">
+            <div id="breakCont"><BreakReminder /></div>
+              <div id="hungryCont">
+              {hungry ?
+                <div id="foodCont"><Food /></div>
+                : <Button
+                  id="hungryButton"
+                  variant="contained"
+                  onClick={() => setHungry(true)}>
+                  Hungry?
+                </Button>}
+                </div>
+          </div>
+            <Notes />
         </div>
         <RubberDucky />
       </div>
