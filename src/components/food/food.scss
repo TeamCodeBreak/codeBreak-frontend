@@ -1,71 +1,71 @@
-#findButton{
-  margin:1%;
-  margin-left:2%;
+#findButton {
+  margin: 1%;
+  margin-left: 2%;
   width: auto;
   height: 3.4rem;
 }
 
 #clearButton {
-  margin:1%;
+  margin: 1%;
   width: auto;
   height: 3.4rem;
 }
 
-#restCard{
-  width: 300; 
-  margin-top: 4%; 
+#restCard {
+  width: 300;
+  margin-top: 4%;
 }
 
 .light {
-  #data{
+  #data {
     background-color: #d7d2c9;
   }
 
-  #zipCodeForm{
+  #zipCodeForm {
     background-color: #d7d2c9;
   }
 
-  #findButton{
+  #findButton {
     color: #545454;
     background-color: #dce6ec;
     transition: all 0.6s ease-in-out;
   }
 
-  #findButton:hover{
+  #findButton:hover {
     background-color: #e6f0f6;
   }
 
   #clearButton {
-    background-color: #6A7A82;
+    background-color: #6a7a82;
     transition: all 0.6s ease-in-out;
   }
 
-  #clearButton:hover{
+  #clearButton:hover {
     background-color: #889ca6;
   }
-  
-  #restCard{
-    background: #A2B0B8; 
+
+  #restCard {
+    background: #a2b0b8;
     color: white;
   }
 }
 
 .dark {
-  #data{
-    background-color: #9CA9A7;
+  #data {
+    background-color: #9ca9a7;
   }
 
-  #zipCodeForm{
-    background-color: #9CA9A7;
+  #zipCodeForm {
+    background-color: #9ca9a7;
   }
 
-  #findButton{
+  #findButton {
     background-color: #cad4d9;
-    color:#7f919c;
+    color: #7f919c;
     transition: all 0.6s ease-in-out;
   }
 
-  #findButton:hover{
+  #findButton:hover {
     background-color: #e4eef3;
   }
 
@@ -75,12 +75,12 @@
     transition: all 0.6s ease-in-out;
   }
 
-  #clearButton:hover{
+  #clearButton:hover {
     background-color: #9eb3c0;
   }
 
-  #restCard{
-    background: #6b797a; 
+  #restCard {
+    background: #6b797a;
     color: white;
   }
 }
