@@ -84,27 +84,29 @@ export default function Notes() {
       },
     };
 
-   await axios.delete(`${url}/notes/${e.target.id}`, config);
+    await axios.delete(`${url}/notes/${e.target.id}`, config);
 
     setRun(!run);
   }
   return (
     <>
       <div className={theme.mode}>
+      <div id="notePadTitleCont">
+        <div id="notePadTitle">
+          <h2>Write it out.</h2>
+          <TextField
+            label="Enter your thoughts!"
+            variant="outlined"
+            className="input__notes"
+            type="text"
+            value={value}
+            onKeyPress={handleAddNote}
+            onChange={e => setValue(e.target.value)}
+            data-testid="input"
+          />
+        </div>
+        </div>
         <div id="notesCont">
-          <div id="notePadTitle">
-            <h2>Write it out.</h2>
-            <TextField
-              label="Enter your thoughts!"
-              variant="outlined"
-              className="input__notes"
-              type="text"
-              value={value}
-              onKeyPress={handleAddNote}
-              onChange={e => setValue(e.target.value)}
-              data-testid="input"
-            />
-          </div>
           <div className="notes__parent" data-testid="notes">
             {notes[0] &&
               notes.map(note => (

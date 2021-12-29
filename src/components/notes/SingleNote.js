@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './notes.scss';
 import Paper from '@mui/material/Paper';
 
+
 export default function SingleNote(props) {
   const [value, setValue] = useState('');
 
@@ -14,7 +15,8 @@ export default function SingleNote(props) {
 
   return (
     <Paper
-      elevation={3}
+      id="singleNotepad"
+      elevation={6}
       className="note"
       key={props.note.id}
       data-testid={props.note.notes}
@@ -38,7 +40,7 @@ export default function SingleNote(props) {
         id={props.note.id}
         onKeyPress={handleValue}
         onChange={e => setValue(e.target.value)}
-        data-testid="update"
+        data-testid="edit"
       ></input>
     </Paper>
   );
