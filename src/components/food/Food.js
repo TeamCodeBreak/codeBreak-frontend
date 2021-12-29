@@ -2,17 +2,13 @@ import { useState, useContext } from 'react';
 import axios from 'axios';
 import './food.scss';
 import { ThemeContext } from '../../context/theme';
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Button, Card, CardActionArea, CardContent, TextField, Typography } from '@mui/material';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+
 
 
 const REACT_APP_URL = process.env.REACT_APP_URL;
+
 export default function Food() {
   const theme = useContext(ThemeContext);
   const [formData, setFormData] = useState();
@@ -56,10 +52,15 @@ export default function Food() {
                 margin: '1%',
               }}
               onChange={e => setFormData(e.target.value)}
-              name="zipcode"
+              name="ZIP Code"
               required
               id="outlined-required"
-              label="zipcode"
+              label="ZIP Code"
+              InputProps={{
+              endAdornment: (
+                <LocalDiningIcon position="end" />
+              ),
+            }}
             />
             <Button
               variant="contained"
