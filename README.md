@@ -3,7 +3,7 @@
 </div>
 <h1 align="center">The dev mind you've been waiting for...</h1>
 
-<h2 align="center">Meet the Creators</h2> 
+<h2 align="center">Meet the Creators</h2>
 
 <h3 align="center">Marquesa Asmussen</h3> 
 <div align="center">
@@ -194,6 +194,7 @@ Check out our [software requirements](requirements.md) doc!
 - [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
 - [Medium](https://medium.com/)
 - [breaktime modal sun image](https://www.canva.com/)
+- [Spencer the dev ducky](https://www.canva.com/)
 
 ### Advisors
 
