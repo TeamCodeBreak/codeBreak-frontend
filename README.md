@@ -1,7 +1,7 @@
 <div align="center">
 <img width="200px" src="./assets/codebrLogo.png">
 </div>
-<h1 align="center">The dev mind you've been waiting for...</h1> 
+<h1 align="center">The dev mind you've been waiting for...</h1>
 
 <h2 align="center">Meet the Creators</h2> 
 
@@ -53,45 +53,47 @@ If you're a developer, you can probably relate to this. Forgetting to take break
 
 ## Project Overview
 
-| Title      | Languages/Frameworks/Libraries/Tools |
-| ----------- | ----------- |
-| Frontend | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS|
-| Backend | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
-| Integrations | Travel Advisor API |
+| Title        | Languages/Frameworks/Libraries/Tools                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| Frontend     | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS                                                         |
+| Backend      | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
+| Integrations | Travel Advisor API                                                                                                        |
 
 ## Installation
 
-1. `npm install`  
-    * @emotion/react
-    * @emotion/styled
-    * @mui/icons-material
-    * @mui/lab
-    * @mui/material
-    * @mui/styled-engine-sc
-    * @testing-library/jest-dom
-    * @testing-library/react
-    * @testing-library/user-event
-    * axios
-    * buffer
-    * date-fns
-    * jsonwebtoken
-    * msw
-    * react
-    * react-cookies
-    * react-dom
-    * react-error-overlay
-    * react-if
-    * react-router-dom
-    * react-scripts
-    * sass
-    * stream
-    * util
-    * web-vitals
+1. `npm install`
+
+   - @emotion/react
+   - @emotion/styled
+   - @mui/icons-material
+   - @mui/lab
+   - @mui/material
+   - @mui/styled-engine-sc
+   - @testing-library/jest-dom
+   - @testing-library/react
+   - @testing-library/user-event
+   - axios
+   - buffer
+   - date-fns
+   - jsonwebtoken
+   - msw
+   - react
+   - react-cookies
+   - react-dom
+   - react-error-overlay
+   - react-if
+   - react-router-dom
+   - react-scripts
+   - sass
+   - stream
+   - util
+   - web-vitals
 
 2. `npm start`
 
-*sample .env*
-``` 
+_sample .env_
+
+```
 REACT_APP_SECRET=placeYourSecretHere
 
 REACT_APP_URL=placeHerokuURLHere
@@ -163,10 +165,10 @@ User should be able to click on Rubber Duck rendering it to the web page.
 
 ## Wireframe
 
-*wireframe 1*
+_wireframe 1_
 ![wireframe screenshot](assets/wireframe.png)
 
-*wireframe 2*
+_wireframe 2_
 ![wireframe2 screenshot](assets/wireframe2.png)
 
 ## Software Requirements
@@ -177,27 +179,28 @@ Check out our [software requirements](requirements.md) doc!
 
 ### Sites
 
-* [light background](https://unsplash.com/photos/uuCjYxJVf4o)
-* [dark background](https://unsplash.com/photos/DjjaZybYx4I)
-* [dark homepage banner](https://unsplash.com/photos/MrWOCGKFVDg)
-* [light homepage banner](https://unsplash.com/photos/xB2XP29gn10)
-* [Unsplash](https://unsplash.com/)
-* [GitHub Projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
-* [Stack Overflow](stackoverflow.com)
-* [MDN Docs](https://developer.mozilla.org/en-US/)
-* [W3 Schools](https://www.w3schools.com/)
-* [Node JS Docs](https://nodejs.org/en/docs/)
-* [ReactJS](https://reactjs.org/)
-* [Material UI docs](https://mui.com/getting-started/usage/)
-* [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
-* [Medium](https://medium.com/)
+- [light background](https://unsplash.com/photos/uuCjYxJVf4o)
+- [dark background](https://unsplash.com/photos/DjjaZybYx4I)
+- [dark homepage banner](https://unsplash.com/photos/MrWOCGKFVDg)
+- [light homepage banner](https://unsplash.com/photos/xB2XP29gn10)
+- [Unsplash](https://unsplash.com/)
+- [GitHub Projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
+- [Stack Overflow](stackoverflow.com)
+- [MDN Docs](https://developer.mozilla.org/en-US/)
+- [W3 Schools](https://www.w3schools.com/)
+- [Node JS Docs](https://nodejs.org/en/docs/)
+- [ReactJS](https://reactjs.org/)
+- [Material UI docs](https://mui.com/getting-started/usage/)
+- [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
+- [Medium](https://medium.com/)
+- [breaktime modal sun image](https://www.canva.com/)
 
 ### Advisors
 
-- _[Jacob Knaack ](https://www.linkedin.com/in/jacobknaack/)_
+- _[Jacob Knaack](https://www.linkedin.com/in/jacobknaack/)_
 - _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
 - _[Alexander Williams](https://www.linkedin.com/in/alexander-williams2311/)_
-- _[Marie Marcos ](https://www.linkedin.com/in/marie-marcos/)_
+- _[Marie Marcos](https://www.linkedin.com/in/marie-marcos/)_
 
 - And all the other TAs who helped us along the way
 
@@ -208,6 +211,6 @@ Check out our [software requirements](requirements.md) doc!
 
 ## Future Implementations
 
-* Integrate break reminder into React Native app so break reminder can notify user's phone if they step away from desktop
-* Create a mental reset component that leads user through a quick 30-60 second breathing exercise
-* Provide user song suggestions for coding workflow based on mood
+- Integrate break reminder into React Native app so break reminder can notify user's phone if they step away from desktop
+- Create a mental reset component that leads user through a quick 30-60 second breathing exercise
+- Provide user song suggestions for coding workflow based on mood

@@ -2,6 +2,9 @@
 // EXTREME-STRETCH: voice integration? record your voice and save it? have it playback words (closed caption style)
 
 import React from 'react';
+// import * as React from 'react';
+// import Popover from '@mui/material/Popover';
+// import Typography from '@mui/material/Typography';
 import Image from 'react-bootstrap/Image';
 import {
   OverlayTrigger,
