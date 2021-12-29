@@ -3,10 +3,6 @@ input {
   resize: none;
 }
 
-.notes__parent {
-  display: flex;
-  // flex-direction: column;
-}
 
 .light{
   #notesCont{
@@ -15,8 +11,13 @@ input {
   .note {
     box-shadow: 2px 2px 3px lightgrey;
   }
+  .note_editbox {
+    color:#424951;
+    background-color: #cbd8ea;
+  }
   .note__delete {
-    color: #acbdc0;
+    color: #121212;
+    background-color: #cbd8ea;
     transition: all 0.6s ease-in-out;
   }
   
@@ -27,11 +28,20 @@ input {
 
   #notePadTitle{
     background-color: rgb(209, 209, 209);
+    box-shadow: 6px 6px 6px #a7a6a6;
 
     h2{
       color: #8a9593;
       margin-bottom: 6%;
     }
+  }
+
+  #singleNotepad{
+    background: #cbd8ea;
+  }
+
+  #notePadTitleCont{
+    background-color: rgb(244, 244, 244);
   }
 }
 
@@ -43,8 +53,15 @@ input {
   .note {
     box-shadow: 2px 2px 3px lightgrey;
   }
+
+  .note_editbox {
+    color:#424951;
+    background-color: #beb8ae;
+  }
+
   .note__delete {
-    color: #acbdc0;
+    color: #565f60;
+    background-color: #beb8ae;
     transition: all 0.6s ease-in-out;
   }
   
@@ -55,12 +72,22 @@ input {
 
   #notePadTitle{
     background-color: #829BA7;
+    box-shadow: 6px 6px 6px #4e4e4e;
 
     h2{
       color: #cad6d4;
       margin-bottom: 6%;
     }
   }
+
+  #singleNotepad{
+    background: #beb8ae;
+  }
+
+  #notePadTitleCont{
+    background-color: rgb(20, 20, 20);
+  }
+
 }
 .note {
   width: 200px;
@@ -75,27 +102,26 @@ input {
   width: 100%;
   padding: 8px 14px;
   background: transparent;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 800pt;
+  font-family: 'Waiting for the Sunrise', cursive;
 }
 
 .note__delete {
   position: absolute;
   top: 0px;
   right: 0px;
-  font-size: 20px;
+  font-size: 25px;
   padding: 5px;
-  background-color: #fff;
   border: none;
 }
-
 
 .note_editbox {
   position: absolute;
   border: none;
   width: 100%;
   bottom: 0px;
-  border-radius: 5px;
+  font-size: 20px;
 }
 
 .input__notes {
@@ -103,14 +129,30 @@ input {
   margin: 10px;
 }
 
+#notePadTitleCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+
 #notePadTitle{
-  margin-top: 6%;
-  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding:8%;
   border-radius: 8px;
-  margin-bottom: 4%;
+  height:200px;
+  width:400px;
+}
+
+.notes__parent{
+  margin-top: 6%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
