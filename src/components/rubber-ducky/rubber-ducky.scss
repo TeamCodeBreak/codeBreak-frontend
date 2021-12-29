@@ -4,15 +4,20 @@
   position: fixed;
   right: 50px;
   bottom: 50px;
+  z-index: 12;
 
   animation: bounce 1s infinite alternate;
   transition: transform 2s;
 }
 
 #rubberDucky:hover {
-  -ms-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
+  animation: 1s;
   transform: scale(1.5) rotate(-10deg) translateX(-20px) translateY(-20px);
+}
+
+#rubberDucky[ducky='1'] {
+  animation: 1s;
+  transform: scale(15.5) rotate(-10deg) translateX(-20px) translateY(-20px);
 }
 
 @keyframes bounce {
