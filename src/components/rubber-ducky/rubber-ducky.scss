@@ -10,9 +10,6 @@
 }
 
 #rubberDucky:hover {
-  animation: shake 1s;
-  animation-iteration-count: infinite; // shake
-
   -ms-transform: scale(1.5);
   -webkit-transform: scale(1.5);
   transform: scale(1.5) rotate(-10deg) translateX(-20px) translateY(-20px);
