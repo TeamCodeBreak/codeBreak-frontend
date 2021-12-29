@@ -2,6 +2,9 @@
 // EXTREME-STRETCH: voice integration? record your voice and save it? have it playback words (closed caption style)
 
 import React from 'react';
+// import * as React from 'react';
+// import Popover from '@mui/material/Popover';
+// import Typography from '@mui/material/Typography';
 import Image from 'react-bootstrap/Image';
 import {
   OverlayTrigger,
@@ -15,11 +18,11 @@ import './rubber-ducky.scss';
 function RubberDucky() {
   // TODO: user does not want duck on screen, option to hide the duck, which then renders a button on side of screen to being him back
   // handleHide();
-
+  const [ducky, setDucky] = React.useState(0);
   return (
     <>
       <OverlayTrigger
-        trigger={['hover', 'hover']}
+        trigger={['hover', 'click']}
         key='overlayTrig'
         placement='top'
         id='overlayTrigger'
@@ -46,7 +49,15 @@ function RubberDucky() {
           </Popover>
         }
       >
-        <Image src={duckyImage} id='rubberDucky' class='ducky' />
+        <Image
+          onClick={() => {
+            ducky === 0 ? setDucky(1) : setDucky(0);
+          }}
+          src={duckyImage}
+          id='rubberDucky'
+          class='ducky'
+          ducky={ducky}
+        />
       </OverlayTrigger>
     </>
   );

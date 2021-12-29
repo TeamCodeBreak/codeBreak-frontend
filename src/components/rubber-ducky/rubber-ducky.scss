@@ -1,21 +1,23 @@
 #rubberDucky {
   display: block;
   width: 200px;
-  position: absolute;
+  position: fixed;
   right: 50px;
   bottom: 50px;
+  z-index: 12;
 
   animation: bounce 1s infinite alternate;
   transition: transform 2s;
 }
 
 #rubberDucky:hover {
-  animation: shake 1s;
-  animation-iteration-count: infinite; // shake
+  animation: 1s;
+  transform: scale(1.5) rotate(-10deg) translateX(-20px) translateY(-20px);
+}
 
-  -ms-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5) rotate(-10deg);
+#rubberDucky[ducky='1'] {
+  animation: 1s;
+  transform: scale(15.5) rotate(-10deg) translateX(-20px) translateY(-20px);
 }
 
 @keyframes bounce {
