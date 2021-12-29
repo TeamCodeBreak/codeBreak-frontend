@@ -1,35 +1,35 @@
 <div align="center">
 <img width="200px" src="./assets/codebrLogo.png">
 </div>
-<h1 align="center">The dev mind you've been waiting for...</h1> 
+<h1 align="center">The dev mind you've been waiting for...</h1>
 
-<h2 align="center">Meet the Creators</h2> 
+<h2 align="center">Meet the Creators</h2>
 
-<h3 align="center">Marquesa Asmussen</h3> 
+<h3 align="center">Marquesa Asmussen</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/marquesaa/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/MarquesaAsmussen"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Christopher Burk</h3> 
+<h3 align="center">Christopher Burk</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/christopherburk/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/cburk2019"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Sarah Creager</h3> 
+<h3 align="center">Sarah Creager</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/sarah-creager/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/SarahCreager"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Roop Hayer</h3> 
+<h3 align="center">Roop Hayer</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/roophayer/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/RoopHayer"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Harvey Lucas</h3> 
+<h3 align="center">Harvey Lucas</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/harvey-lucas-iii/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/tripppdx"><img height="40" src="./assets/githubIcon.png"></a>
@@ -53,7 +53,7 @@ If you're a developer, you can probably relate to this. Forgetting to take break
 
 ## Project Overview
 
-| Title      | Languages/Frameworks/Libraries/Tools |
+| Title      | Languages / Frameworks / Libraries / Tools |
 | ----------- | ----------- |
 | Frontend | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS|
 | Backend | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
@@ -61,7 +61,7 @@ If you're a developer, you can probably relate to this. Forgetting to take break
 
 ## Installation
 
-1. `npm install`  
+1. `npm install`
     * @emotion/react
     * @emotion/styled
     * @mui/icons-material
@@ -90,8 +90,9 @@ If you're a developer, you can probably relate to this. Forgetting to take break
 
 2. `npm start`
 
-*sample .env*
-``` 
+### _sample .env_
+
+```md
 REACT_APP_SECRET=placeYourSecretHere
 
 REACT_APP_URL=placeHerokuURLHere
@@ -163,10 +164,12 @@ User should be able to click on Rubber Duck rendering it to the web page.
 
 ## Wireframe
 
-*wireframe 1*
+### _wireframe 1_
+
 ![wireframe screenshot](assets/wireframe.png)
 
-*wireframe 2*
+### _wireframe 2_
+
 ![wireframe2 screenshot](assets/wireframe2.png)
 
 ## Software Requirements
@@ -175,7 +178,7 @@ Check out our [software requirements](requirements.md) doc!
 
 ## Resources and Contributions
 
-### Sites
+### Online Resources and Assets
 
 * [light background](https://unsplash.com/photos/uuCjYxJVf4o)
 * [dark background](https://unsplash.com/photos/DjjaZybYx4I)
@@ -191,19 +194,21 @@ Check out our [software requirements](requirements.md) doc!
 * [Material UI docs](https://mui.com/getting-started/usage/)
 * [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
 * [Medium](https://medium.com/)
+* [breaktime modal sun image](https://www.canva.com/)
+* [Spencer the dev ducky](https://www.canva.com/)
 
 ### Advisors
 
-- _[Jacob Knaack ](https://www.linkedin.com/in/jacobknaack/)_
-- _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
-- _[Alexander Williams](https://www.linkedin.com/in/alexander-williams2311/)_
-- _[Marie Marcos ](https://www.linkedin.com/in/marie-marcos/)_
+* _[Jacob Knaack](https://www.linkedin.com/in/jacobknaack/)_
+* _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
+* _[Alexander Williams](https://www.linkedin.com/in/alexander-williams2311/)_
+* _[Marie Marcos](https://www.linkedin.com/in/marie-marcos/)_
 
-- And all the other TAs who helped us along the way
+* And all the other TAs who helped us along the way
 
 ## Deployed Site Links
 
-[Netlify](https://codebr.netlify.app/)  
+[Netlify](https://codebr.netlify.app/)
 [Heroku](https://code-break-server.herokuapp.com)
 
 ## Future Implementations
