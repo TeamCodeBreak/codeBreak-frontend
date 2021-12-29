@@ -5,31 +5,31 @@
 
 <h2 align="center">Meet the Creators</h2>
 
-<h3 align="center">Marquesa Asmussen</h3> 
+<h3 align="center">Marquesa Asmussen</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/marquesaa/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/MarquesaAsmussen"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Christopher Burk</h3> 
+<h3 align="center">Christopher Burk</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/christopherburk/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/cburk2019"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Sarah Creager</h3> 
+<h3 align="center">Sarah Creager</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/sarah-creager/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/SarahCreager"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Roop Hayer</h3> 
+<h3 align="center">Roop Hayer</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/roophayer/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/RoopHayer"><img height="40" src="./assets/githubIcon.png"></a>
 </div>
 
-<h3 align="center">Harvey Lucas</h3> 
+<h3 align="center">Harvey Lucas</h3>
 <div align="center">
 <a href="https://www.linkedin.com/in/harvey-lucas-iii/"><img height="40" src="./assets/linkedInIcon.png"></a>
 <a href="https://github.com/tripppdx"><img height="40" src="./assets/githubIcon.png"></a>
@@ -53,47 +53,46 @@ If you're a developer, you can probably relate to this. Forgetting to take break
 
 ## Project Overview
 
-| Title        | Languages/Frameworks/Libraries/Tools                                                                                      |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| Frontend     | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS                                                         |
-| Backend      | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
-| Integrations | Travel Advisor API                                                                                                        |
+| Title      | Languages / Frameworks / Libraries / Tools |
+| ----------- | ----------- |
+| Frontend | React, Netlify, Material UI, Jest, MSW, Axios, Jsonwebtoken, SCSS|
+| Backend | Node.js, Express, Mongoose, Heroku, PostgreSQL, Sqlite3, Sequelize, Jest, Supertest, Jsonwebtoken, Axios, Base-64, Bcrypt |
+| Integrations | Travel Advisor API |
 
 ## Installation
 
 1. `npm install`
-
-   - @emotion/react
-   - @emotion/styled
-   - @mui/icons-material
-   - @mui/lab
-   - @mui/material
-   - @mui/styled-engine-sc
-   - @testing-library/jest-dom
-   - @testing-library/react
-   - @testing-library/user-event
-   - axios
-   - buffer
-   - date-fns
-   - jsonwebtoken
-   - msw
-   - react
-   - react-cookies
-   - react-dom
-   - react-error-overlay
-   - react-if
-   - react-router-dom
-   - react-scripts
-   - sass
-   - stream
-   - util
-   - web-vitals
+    * @emotion/react
+    * @emotion/styled
+    * @mui/icons-material
+    * @mui/lab
+    * @mui/material
+    * @mui/styled-engine-sc
+    * @testing-library/jest-dom
+    * @testing-library/react
+    * @testing-library/user-event
+    * axios
+    * buffer
+    * date-fns
+    * jsonwebtoken
+    * msw
+    * react
+    * react-cookies
+    * react-dom
+    * react-error-overlay
+    * react-if
+    * react-router-dom
+    * react-scripts
+    * sass
+    * stream
+    * util
+    * web-vitals
 
 2. `npm start`
 
-_sample .env_
+### _sample .env_
 
-```
+```md
 REACT_APP_SECRET=placeYourSecretHere
 
 REACT_APP_URL=placeHerokuURLHere
@@ -165,10 +164,12 @@ User should be able to click on Rubber Duck rendering it to the web page.
 
 ## Wireframe
 
-_wireframe 1_
+### _wireframe 1_
+
 ![wireframe screenshot](assets/wireframe.png)
 
-_wireframe 2_
+### _wireframe 2_
+
 ![wireframe2 screenshot](assets/wireframe2.png)
 
 ## Software Requirements
@@ -177,41 +178,41 @@ Check out our [software requirements](requirements.md) doc!
 
 ## Resources and Contributions
 
-### Sites
+### Online Resources and Assets
 
-- [light background](https://unsplash.com/photos/uuCjYxJVf4o)
-- [dark background](https://unsplash.com/photos/DjjaZybYx4I)
-- [dark homepage banner](https://unsplash.com/photos/MrWOCGKFVDg)
-- [light homepage banner](https://unsplash.com/photos/xB2XP29gn10)
-- [Unsplash](https://unsplash.com/)
-- [GitHub Projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
-- [Stack Overflow](stackoverflow.com)
-- [MDN Docs](https://developer.mozilla.org/en-US/)
-- [W3 Schools](https://www.w3schools.com/)
-- [Node JS Docs](https://nodejs.org/en/docs/)
-- [ReactJS](https://reactjs.org/)
-- [Material UI docs](https://mui.com/getting-started/usage/)
-- [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
-- [Medium](https://medium.com/)
-- [breaktime modal sun image](https://www.canva.com/)
-- [Spencer the dev ducky](https://www.canva.com/)
+* [light background](https://unsplash.com/photos/uuCjYxJVf4o)
+* [dark background](https://unsplash.com/photos/DjjaZybYx4I)
+* [dark homepage banner](https://unsplash.com/photos/MrWOCGKFVDg)
+* [light homepage banner](https://unsplash.com/photos/xB2XP29gn10)
+* [Unsplash](https://unsplash.com/)
+* [GitHub Projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects)
+* [Stack Overflow](stackoverflow.com)
+* [MDN Docs](https://developer.mozilla.org/en-US/)
+* [W3 Schools](https://www.w3schools.com/)
+* [Node JS Docs](https://nodejs.org/en/docs/)
+* [ReactJS](https://reactjs.org/)
+* [Material UI docs](https://mui.com/getting-started/usage/)
+* [Travel Advisor API Documentation](https://rapidapi.com/apidojo/api/travel-advisor)
+* [Medium](https://medium.com/)
+* [breaktime modal sun image](https://www.canva.com/)
+* [Spencer the dev ducky](https://www.canva.com/)
 
 ### Advisors
 
-- _[Jacob Knaack](https://www.linkedin.com/in/jacobknaack/)_
-- _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
-- _[Alexander Williams](https://www.linkedin.com/in/alexander-williams2311/)_
-- _[Marie Marcos](https://www.linkedin.com/in/marie-marcos/)_
+* _[Jacob Knaack](https://www.linkedin.com/in/jacobknaack/)_
+* _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
+* _[Alexander Williams](https://www.linkedin.com/in/alexander-williams2311/)_
+* _[Marie Marcos](https://www.linkedin.com/in/marie-marcos/)_
 
-- And all the other TAs who helped us along the way
+* And all the other TAs who helped us along the way
 
 ## Deployed Site Links
 
-[Netlify](https://codebr.netlify.app/)  
+[Netlify](https://codebr.netlify.app/)
 [Heroku](https://code-break-server.herokuapp.com)
 
 ## Future Implementations
 
-- Integrate break reminder into React Native app so break reminder can notify user's phone if they step away from desktop
-- Create a mental reset component that leads user through a quick 30-60 second breathing exercise
-- Provide user song suggestions for coding workflow based on mood
+* Integrate break reminder into React Native app so break reminder can notify user's phone if they step away from desktop
+* Create a mental reset component that leads user through a quick 30-60 second breathing exercise
+* Provide user song suggestions for coding workflow based on mood

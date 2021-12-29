@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState, useEffect, useContext } from 'react';
-// import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import { FormControl, InputLabel, OutlinedInput } from '@mui/material';
 import Stack from '@mui/material/Stack';
@@ -8,9 +7,8 @@ import Button from '@mui/material/Button';
 import BreakReminderModal from '../break-modal/Modal';
 import { ThemeContext } from '../../context/theme';
 import './breakReminder.scss';
-import { When } from 'react-if';
 
-export default function BreakReminder() {
+function BreakReminder() {
   const theme = useContext(ThemeContext);
 
   const [second, setSecond] = useState('00');
@@ -87,8 +85,8 @@ export default function BreakReminder() {
               <span className="second">{second}</span>
             </div>
             <Stack spacing={2} direction="row">
-                <Button variant="contained" data-testid="start/pauseButton" id="startTimer" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
-                <Button 
+              <Button variant="contained" data-testid="start/pauseButton" id="startTimer" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
+              <Button
                 data-testid="resetButton"
                 variant="contained" id="resetTimer" onClick={stopTimer}>Reset</Button>
             </Stack>
@@ -96,7 +94,8 @@ export default function BreakReminder() {
           <BreakReminderModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
         </Box>
       </div >
-      </div >
-    // </Modal>
+    </div >
   );
 }
+
+export default BreakReminder;

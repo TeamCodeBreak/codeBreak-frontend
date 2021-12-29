@@ -20,7 +20,7 @@
   - Break reminder that is customizable so you can set intervals for break notifications (persists)
   - Could change site dark/light theme (persists)
   - Quick mental break (e.g. a short breathing technique, short video, inspirational quote, something funny)
-  - Rubby ducky programming option (select this to literally talk to a "rubber duck")
+  - Rubber ducky programming option (select this to literally talk to a "rubber duck")
   - Hungry? input zip code and feature connects to yelps api and helps user find meal (zip code persists)
 
 - OUT
@@ -70,4 +70,4 @@ User has to create an account with our app to access it. Then user can log in a
 ## Non-Functional Requirements
 
 1. Security: user must create an account and log in to use the app. This secures user accounts from unauthorized access. We will write our own basic and bearer authorization.
-2. Data Persistance: User data shall persist between sessions. This enables restaurant recommendations to popluate without user input. Preferred theme should also be retained.
+2. Data Persistance: User data shall persist between sessions. This enables restaurant recommendations to populate without user input. Preferred theme should also be retained.
