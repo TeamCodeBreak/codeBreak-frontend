@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import { Box } from '@mui/system';
-import { FormControl, InputLabel, OutlinedInput } from '@mui/material';
+import {
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+  LinearProgress
+} from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import BreakReminderModal from '../break-modal/Modal';
 import { ThemeContext } from '../../context/theme';
 import './breakReminder.scss';
+import { When } from 'react-if';
 
 function BreakReminder() {
   const theme = useContext(ThemeContext);
@@ -84,6 +90,13 @@ function BreakReminder() {
               <span>:</span>
               <span className="second">{second}</span>
             </div>
+            <When condition={counter > 0}>
+              <div id="progressBarDiv">
+                <Box sx={{ width: '100%' }}>
+                  <LinearProgress variant="determinate" value={counter} />
+                </Box>
+              </div>
+            </When>
             <Stack spacing={2} direction="row">
               <Button variant="contained" data-testid="start/pauseButton" id="startTimer" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</Button>
               <Button
